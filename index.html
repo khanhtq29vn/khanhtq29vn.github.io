@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tran Quoc Khanh — AI Researcher &amp; Open-Source Systems Creator</title>
+  <meta name="description" content="Academic homepage of Tran Quoc Khanh (Khanh Quoc Tran). Fundamental AI Researcher in Low-Resource NLP, Model Efficiency, and Trustworthy & Explainable AI (AAAI, EACL, KBS, NCA), and Creator of ContextCraft." />
+
+  <!-- Security Hardening: Strict Referrer & Content Security Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://github.com https://*.githubusercontent.com; connect-src 'self';"
+  />
+
+  <!-- Google Scholar Highwire Press Meta Tags -->
+  <meta name="citation_author" content="Tran, Khanh Quoc" />
+  <meta name="citation_title" content="VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements" />
+  <meta name="citation_publication_date" content="2026" />
+  <meta name="citation_conference_title" content="AAAI Conference on Artificial Intelligence" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            serif: ['Source Serif 4', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+          },
+          colors: {
+            cerulean: {
+              DEFAULT: '#3B97B6',
+              dark: '#2B7A96',
+              light: '#EBF6F9',
+            },
+            impact: {
+              DEFAULT: '#D92626',
+              dark: '#F87171',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --text-main: #222222;
+      --text-body: #333333;
+      --text-muted: #666666;
+      --border-line: #E5E7EB;
+      --cerulean: #358BA8;
+      --cerulean-hover: #216177;
+      --impact-red: #D61F1F;
+    }
+
+    html.dark {
+      --bg-page: #0D1117;
+      --bg-subtle: #161B22;
+      --text-main: #F0F6FC;
+      --text-body: #C9D1D9;
+      --text-muted: #8B949E;
+      --border-line: #30363D;
+      --cerulean: #58A6FF;
+      --cerulean-hover: #79C0FF;
+      --impact-red: #FF7B72;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .body-copy {
+      color: var(--text-body);
+    }
+
+    .muted-copy {
+      color: var(--text-muted);
+    }
+
+    .hairline {
+      border-color: var(--border-line);
+    }
+
+    .subtle-box {
+      background-color: var(--bg-subtle);
+      border-color: var(--border-line);
+    }
+
+    .acad-link {
+      color: var(--cerulean);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .acad-link:hover {
+      color: var(--cerulean-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Collaborator Link with Subtle Dotted Underline */
+    .collab-link {
+      color: var(--cerulean);
+      border-bottom: 1px dashed rgba(53, 139, 168, 0.45);
+      padding-bottom: 0.5px;
+      transition: all 0.15s ease;
+    }
+
+    .collab-link:hover {
+      color: var(--cerulean-hover);
+      border-bottom-style: solid;
+      border-bottom-color: var(--cerulean-hover);
+    }
+
+    /* Signature Vertical Left Bar (`| News`, `| Selected Publications`) */
+    .section-bar {
+      border-left: 4px solid #3B97B6;
+      padding-left: 0.65rem;
+      line-height: 1.25;
+    }
+
+    /* Signature Red Impact Text (`Featured by...`, `Oral Presentation.`) */
+    .impact-highlight {
+      color: var(--impact-red);
+      font-weight: 500;
+    }
+
+    /* Signature Pill Buttons (`Selected Papers` | `Student Papers`) */
+    .pub-pill {
+      padding: 0.35rem 0.9rem;
+      font-size: 13.5px;
+      border-radius: 5px;
+      border: 1px solid #D1D5DB;
+      color: var(--text-body);
+      background-color: transparent;
+      transition: all 0.15s ease;
+    }
+
+    html.dark .pub-pill {
+      border-color: #30363D;
+    }
+
+    .pub-pill:hover {
+      border-color: #3B97B6;
+      color: #3B97B6;
+    }
+
+    .pub-pill.active {
+      background-color: #3B97B6;
+      border-color: #3B97B6;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    /* Top Navigation Active Tab Underline (AcademicPages style) */
+    .nav-tab {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+    }
+
+    .nav-tab:hover {
+      color: var(--text-main);
+    }
+
+    .nav-tab.active {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .nav-tab.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -15px;
+      height: 2.5px;
+      background-color: #3B97B6;
+    }
+
+    /* Custom Sleek Scrollbar for `| News` */
+    .news-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .news-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .news-scroll::-webkit-scrollbar-thumb {
+      background-color: rgba(156, 163, 175, 0.45);
+      border-radius: 9999px;
+    }
+    .news-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(59, 151, 182, 0.75);
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans text-[15px] leading-[1.68]">
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden px-3.5 py-2 rounded-md bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-mono text-xs shadow-lg transition-all"></div>
+
+  <!-- Floating Citation Hover Preview Card -->
+  <div id="hoverCard" class="fixed z-50 hidden w-96 p-4 rounded-lg bg-white dark:bg-[#161B22] border hairline shadow-xl pointer-events-none transition-opacity duration-150">
+    <div id="hoverCardVenue" class="font-mono text-[11px] uppercase tracking-wider text-[#3B97B6] font-semibold"></div>
+    <div id="hoverCardTitle" class="text-[13.5px] font-semibold mt-1 leading-snug"></div>
+    <div id="hoverCardAuthors" class="text-[12px] muted-copy mt-1 italic"></div>
+    <div id="hoverCardImpact" class="text-[12px] impact-highlight mt-1.5"></div>
+  </div>
+
+  <!-- Floating Collaborator & Advisor Profile Card (Zero Clutter at Rest!) -->
+  <div id="collabCard" class="fixed z-50 hidden w-80 p-3.5 rounded-lg bg-white dark:bg-[#161B22] border hairline shadow-xl pointer-events-none transition-opacity duration-150">
+    <div class="flex items-center space-x-3">
+      <img id="collabAvatar" src="" alt="" class="w-10 h-10 rounded-full border hairline object-cover bg-slate-100 dark:bg-slate-800" onerror="this.style.display='none'" />
+      <div class="min-w-0">
+        <div id="collabName" class="text-[13.5px] font-semibold truncate"></div>
+        <div id="collabHandle" class="font-mono text-[11px] text-[#3B97B6] truncate"></div>
+      </div>
+    </div>
+    <div id="collabRole" class="mt-2 text-[12px] font-medium body-copy leading-snug"></div>
+    <div id="collabHighlight" class="mt-1 text-[11.5px] muted-copy leading-snug"></div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR      -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/95 dark:bg-[#0D1117]/95 border-b hairline">
+    <div class="max-w-[1040px] mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
+      <div class="flex items-center space-x-8">
+        <button onclick="switchView('overview')" class="font-semibold text-[16px] tracking-tight hover:opacity-80 transition text-left">
+          Tran Quoc Khanh
+        </button>
+
+        <nav class="hidden md:flex items-center space-x-6 text-[14.5px]">
+          <button onclick="switchView('overview')" id="nav-overview" class="nav-tab active">About</button>
+          <button onclick="switchView('publications')" id="nav-publications" class="nav-tab">Publications</button>
+          <button onclick="switchView('systems')" id="nav-systems" class="nav-tab">Systems &amp; Code</button>
+          <button onclick="switchView('teaching')" id="nav-teaching" class="nav-tab">Teaching</button>
+          <button onclick="switchView('honors')" id="nav-honors" class="nav-tab">Honors</button>
+          <button onclick="switchView('blog')" id="nav-blog" class="nav-tab">Blog Posts</button>
+        </nav>
+      </div>
+
+      <div class="flex items-center space-x-2.5">
+        <button
+          onclick="openCommandModal()"
+          class="px-2.5 py-1 rounded border hairline text-xs font-mono muted-copy hover:border-[#3B97B6] hover:text-[#3B97B6] transition flex items-center space-x-1.5"
+          title="Search papers, collaborators, systems, and awards (⌘K)"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16.65 10.825a5.825 5.825 0 11-11.65 0 5.825 5.825 0 0111.65 0z"/>
+          </svg>
+          <span class="hidden sm:inline">Search</span>
+          <kbd class="text-[10px] opacity-75">⌘K</kbd>
+        </button>
+
+        <button
+          onclick="toggleTheme()"
+          class="p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 muted-copy transition"
+          title="Toggle Light / Dark Theme"
+          aria-label="Toggle Theme"
+        >
+          <svg id="themeMoon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <svg id="themeSun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Strip -->
+    <div class="flex md:hidden overflow-x-auto px-5 py-2 space-x-5 border-t hairline text-xs font-medium">
+      <button onclick="switchView('overview')" id="mnav-overview" class="text-[#3B97B6] font-semibold shrink-0">About</button>
+      <button onclick="switchView('publications')" id="mnav-publications" class="muted-copy shrink-0">Publications</button>
+      <button onclick="switchView('systems')" id="mnav-systems" class="muted-copy shrink-0">Systems</button>
+      <button onclick="switchView('teaching')" id="mnav-teaching" class="muted-copy shrink-0">Teaching</button>
+      <button onclick="switchView('honors')" id="mnav-honors" class="muted-copy shrink-0">Honors</button>
+      <button onclick="switchView('blog')" id="mnav-blog" class="muted-copy shrink-0">Blog</button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN TWO-COLUMN ACADEMIC CONTAINER                                    -->
+  <!-- ===================================================================== -->
+  <div class="max-w-[1040px] mx-auto px-5 sm:px-8 py-10 sm:py-14">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
+
+      <!-- ================================================================= -->
+      <!-- LEFT SIDEBAR (3 COLS): PERSISTENT ACROSS ALL VIEWS                -->
+      <!-- ================================================================= -->
+      <aside class="md:col-span-3">
+        <div class="md:sticky md:top-24 flex flex-col items-center text-center">
+
+          <!-- Circular Portrait (Automatically loads GitHub avatar with clean SVG fallback) -->
+          <div class="w-44 h-44 rounded-full overflow-hidden border hairline subtle-box flex items-center justify-center shadow-xs relative">
+            <img
+              src="https://github.com/khanhtq29vn.png?size=360"
+              alt="Tran Quoc Khanh"
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none'; document.getElementById('fallbackPortrait').classList.remove('hidden');"
+            />
+            <svg id="fallbackPortrait" class="hidden w-full h-full text-slate-700 dark:text-slate-300" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="88" cy="88" r="88" fill="#3B97B6" fill-opacity="0.08"/>
+              <text x="88" y="95" text-anchor="middle" fill="currentColor" font-family="Source Serif 4, Georgia, serif" font-size="38" font-weight="600" letter-spacing="0.03em">TQK</text>
+              <text x="88" y="118" text-anchor="middle" fill="currentColor" fill-opacity="0.5" font-family="JetBrains Mono, monospace" font-size="10">Tran Quoc Khanh</text>
+            </svg>
+          </div>
+
+          <!-- Name -->
+          <h1 class="mt-4 text-[21px] font-semibold tracking-tight">
+            Tran Quoc Khanh
+          </h1>
+
+          <!-- Click-to-Copy Obfuscated Email -->
+          <button
+            id="emailCopyBtn"
+            type="button"
+            data-u="a2hhbmh0cQ=="
+            data-d="bnVzLmVkdS52bg=="
+            class="mt-1.5 font-mono text-[12px] leading-snug muted-copy hover:text-[#3B97B6] transition cursor-pointer group"
+            title="Click to copy institutional email address"
+          >
+            khanhtq at u dot nus dot edu<br />
+            <span class="block text-[10px] text-[#3B97B6] opacity-0 group-hover:opacity-100 transition mt-0.5">[click to copy]</span>
+          </button>
+
+          <!-- 5 Clean Monochrome Icons (Email, LinkedIn, GitHub, Google Scholar, CV) -->
+          <div class="flex items-center justify-center space-x-3.5 mt-3.5">
+            <a id="emailMailtoLink" href="#contact" class="text-slate-800 dark:text-slate-200 hover:text-[#3B97B6] dark:hover:text-[#58A6FF] transition" title="Send Email">
+              <svg class="w-[19px] h-[19px]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kh4nh12" target="_blank" rel="noopener" class="text-slate-800 dark:text-slate-200 hover:text-[#3B97B6] dark:hover:text-[#58A6FF] transition" title="LinkedIn">
+              <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/khanhtq29vn" target="_blank" rel="noopener" class="text-slate-800 dark:text-slate-200 hover:text-[#3B97B6] dark:hover:text-[#58A6FF] transition" title="GitHub (@khanhtq29vn)">
+              <svg class="w-[19px] h-[19px]" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=hrjGE18AAAAJ" target="_blank" rel="noopener" class="text-slate-800 dark:text-slate-200 hover:text-[#3B97B6] dark:hover:text-[#58A6FF] transition" title="Google Scholar">
+              <svg class="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+              </svg>
+            </a>
+            <button onclick="switchView('honors')" class="text-slate-800 dark:text-slate-200 hover:text-[#3B97B6] dark:hover:text-[#58A6FF] font-mono text-[11px] font-bold border border-current px-1.5 py-0.5 rounded transition" title="View CV &amp; Honors">
+              CV
+            </button>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ================================================================= -->
+      <!-- RIGHT CONTENT PANE (9 COLS): MULTI-VIEW DYNAMIC WORKSPACE         -->
+      <!-- ================================================================= -->
+      <main class="md:col-span-9">
+
+        <!-- =============================================================== -->
+        <!-- VIEW 1: OVERVIEW   -->
+        <!-- =============================================================== -->
+        <div id="view-overview" class="space-y-10">
+
+          <!-- Biography & 3 Numbered Research Directions (With Hover Citation & Collaborator Cards!) -->
+          <section class="space-y-4 body-copy">
+            <p>
+              Thank you for visiting! I'm Khanh (published as <strong>Khanh Quoc Tran</strong>), a Fundamental AI Researcher and Open-Source Systems Creator at the <a href="https://www.nus.edu.sg/" target="_blank" class="acad-link">National University of Singapore (NUS)</a>. Previously, I was a Research &amp; Development Engineer at the <strong>AISIA Research Lab</strong> advised by <a href="https://sites.google.com/site/ntbinhpolytechnique/home" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Assoc. Prof. Binh Thanh Nguyen</a>, and a Teaching Assistant &amp; Lecturer at <a href="https://www.uit.edu.vn/" target="_blank" class="acad-link">VNUHCM – University of Information Technology</a> advised by <a href="https://scholar.google.com/citations?user=v3RSwOkAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">Dr. Kiet Van Nguyen</a>. My research builds trustworthy, resource-efficient language models and algorithmic developer tools:
+            </p>
+
+            <ol class="list-decimal list-outside ml-5 space-y-2.5">
+              <li class="pl-1">
+                <strong>Trustworthy &amp; Explainable AI (XAI) for High-Stakes Reasoning:</strong> designing retrieval-augmented compliance verification, multi-domain fact-checking benchmarks, and fine-grained span-level explainability
+                [<a href="#home-pubs" onmouseenter="showCite(event, 'vietcheckmed')" onmouseleave="hideCite()" class="acad-link">VietCheckMed (AAAI'26)</a>,
+                <a href="#home-pubs" onmouseenter="showCite(event, 'vifactcheck')" onmouseleave="hideCite()" class="acad-link">ViFactCheck (AAAI'25 Oral)</a>,
+                <a href="#home-pubs" onmouseenter="showCite(event, 'vihos')" onmouseleave="hideCite()" class="acad-link">ViHOS (EACL'23 Oral)</a>].
+              </li>
+              <li class="pl-1">
+                <strong>Low-Resource Complex Table QA &amp; Parameter-Efficient Architectures:</strong> developing multi-hop tabular reasoning metrics and compact hybrid neural networks for streaming social media data
+                [<a href="#home-pubs" onmouseenter="showCite(event, 'openvitabqa')" onmouseleave="hideCite()" class="acad-link">Open-ViTabQA (KBS'25, Q1 IF 8.8)</a>,
+                <a href="#home-pubs" onmouseenter="showCite(event, 'phobertcnn')" onmouseleave="hideCite()" class="acad-link">PhoBERT-CNN (NCA'22, Q1 IF 6.0)</a>].
+              </li>
+              <li class="pl-1">
+                <strong>Algorithmic Context Engineering &amp; Developer Systems:</strong> formulating codebase context compression for LLMs as a Multiple-Choice Knapsack problem over Tree-sitter AST scope graphs and Personalized PageRank + BM25F centrality in a parallel Rust + PyO3 core — co-created with <a href="https://github.com/pinanek" target="_blank" rel="noopener" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link">Ngo Duc Hoang Son (@pinanek)</a> and community contributors including <a href="https://github.com/tyza66" target="_blank" rel="noopener" onmouseenter="showCollab(event, 'tyza66')" onmouseleave="hideCollab()" class="collab-link">@tyza66</a>
+                [<a href="javascript:void(0)" onclick="switchView('systems')" onmouseenter="showCite(event, 'contextcraft')" onmouseleave="hideCite()" class="acad-link">ContextCraft (Rust + PyO3)</a>,
+                <a href="https://pypi.org/project/contextcraft-ai/" target="_blank" class="acad-link">PyPI Package</a>].
+              </li>
+            </ol>
+
+            <p>
+              I graduated <strong>Ranked 1st out of 40 (Valedictorian, GPA: 9.3/10.0)</strong> with an M.Sc. in Data Science from <strong>VNUHCM – University of Science</strong>, where I received the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">VinIF Master's Scholarship</a> (1 of 48 selected nationwide). I am fortunate to have received the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">EMNLP Outstanding Reviewer Award (2024)</a>, the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">PACLIC 36 Best Paper Runner-up Award</a>, the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">Digital Water Hackathon Champion Award (Singapore)</a>, and the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">VNU-HCMC President's Compliment Certificate</a>.
+            </p>
+
+            <p>
+              Please contact me via <a href="mailto:khanhtq@u.nus.edu" class="acad-link">email</a> for collaborations!
+            </p>
+          </section>
+
+          <!-- ============================================================= -->
+          <!-- `| News` (SCROLLABLE BOUNDED VIEWPORT WITH COLLABORATOR LINKS) -->
+          <!-- ============================================================= -->
+          <section class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h2 class="section-bar text-[19px] font-bold tracking-tight">
+                News
+              </h2>
+              <button
+                onclick="toggleNewsHeight(this)"
+                class="text-xs font-mono acad-link"
+              >
+                [Expand all 11 items]
+              </button>
+            </div>
+
+            <!-- Scrollable News Box (Default max-h-[205px] with smooth scroll) -->
+            <div id="newsContainer" class="news-scroll max-h-[205px] overflow-y-auto pr-2 space-y-2 text-[14.5px] body-copy border-b hairline pb-2">
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[11/2026] -</span>
+                Together with <a href="https://github.com/pinanek" target="_blank" rel="noopener" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link">Ngo Duc Hoang Son (@pinanek)</a>, migrated <a href="https://github.com/khanhtq29vn/contextcraft/pull/34" target="_blank" class="acad-link">ContextCraft (PR #34)</a> to a parallel <strong>Rust + Rayon + PyO3</strong> core, compiling the 30,018-file <code class="font-mono text-[13px]">home-assistant/core</code> repository in <strong>7.21 seconds</strong> (17.59× faster than optimized Python).
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[10/2026] -</span>
+                Released <a href="https://pypi.org/project/contextcraft-ai/" target="_blank" class="acad-link">contextcraft-ai v0.3.0</a> on PyPI with 35 Tree-sitter language grammars (<a href="https://github.com/pinanek" target="_blank" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link">@pinanek</a>) and multi-encoding tokenizer support contributed by <a href="https://github.com/tyza66" target="_blank" onmouseenter="showCollab(event, 'tyza66')" onmouseleave="hideCollab()" class="collab-link">@tyza66</a>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[06/2026] -</span>
+                Graduated <strong>1st out of 40 (GPA: 9.3/10.0)</strong> with an M.Sc. in Data Science from <a href="https://en.hcmus.edu.vn/" target="_blank" class="acad-link">VNUHCM – University of Science</a>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[01/2026] -</span>
+                <a href="#home-pubs" class="acad-link">VietCheckMed</a> (co-first author) was accepted to <strong>AAAI 2026</strong>! Developed to address critical healthcare challenges in metropolitan areas like Ho Chi Minh City.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[08/2025] -</span>
+                <a href="#home-pubs" class="acad-link">Open-ViTabQA</a> was published in <strong>Knowledge-Based Systems (SCIE Q1, IF: 8.8)</strong> and surpassed 5,000+ paper views since preprint.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[05/2025] -</span>
+                Placed among the <strong>Top 30 Finalists out of 2,600+ teams (9,100+ contestants)</strong> at the international <em>Data for Life 2025</em> competition in Hanoi.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[02/2025] -</span>
+                <a href="#home-pubs" class="acad-link">ViFactCheck</a> was accepted to <strong>AAAI 2025 (Oral Presentation)</strong>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[11/2024] -</span>
+                Recognized as an <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">Outstanding Reviewer at EMNLP 2024</a>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[09/2024] -</span>
+                Awarded the <a href="javascript:void(0)" onclick="switchView('honors')" class="acad-link">VinIF Master's Scholarship</a> (1 of 48 selected nationwide) and the <strong>VNUHCM Exemplary Young Staff Award</strong>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[05/2023] -</span>
+                <a href="#home-pubs" class="acad-link">ViHOS</a> was accepted to <strong>EACL 2023 (Oral Presentation)</strong>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[11/2022] -</span>
+                Won the <strong>Best Paper Award (1st Runner-up)</strong> at <strong>PACLIC 36</strong> and received the <strong>Student with Five Good Merits (Central Level)</strong> from the Minister of Education.
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================= -->
+          <!-- `| Selected Publications` (EXACT PILL SWITCHER + RED IMPACT)  -->
+          <!-- ============================================================= -->
+          <section id="home-pubs" class="space-y-4 pt-1">
+            <h2 class="section-bar text-[19px] font-bold tracking-tight">
+              Selected Publications
+            </h2>
+
+            <p class="italic text-[14.5px] body-copy">
+              For the full list of my publications: <a href="https://scholar.google.com/citations?user=hrjGE18AAAAJ" target="_blank" class="acad-link">Google Scholar</a> · <a href="javascript:void(0)" onclick="switchView('publications')" class="acad-link">Chronological View</a>
+            </p>
+
+            <!-- Smart Pill Switcher -->
+            <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
+              <button onclick="switchHomePubTab('selected')" id="pill-selected" class="pub-pill active">
+                Selected Papers
+              </button>
+              <button onclick="switchHomePubTab('student')" id="pill-student" class="pub-pill">
+                Student Mentorship &amp; Co-Authored (20)
+              </button>
+              <button onclick="switchHomePubTab('systems')" id="pill-systems" class="pub-pill">
+                Systems &amp; Open-Source Artifacts
+              </button>
+            </div>
+
+            <!-- SUB-PANE A: Selected Flagship Papers  -->
+            <div id="home-pub-selected" class="pt-1">
+              <ol class="list-decimal list-outside ml-5 space-y-4 text-[14.8px] body-copy">
+
+                <!-- 1. VietCheckMed -->
+                <li class="pl-1">
+                  N. T. Tam*, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>*, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">B. T. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-1')" class="acad-link italic">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements.</a>
+                  AAAI Conference on Artificial Intelligence (AAAI), 2026.
+                  <span class="impact-highlight">Accepted (Co-first author) · Engineered for metropolitan public healthcare systems &amp; Pending Patent.</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-1')" class="acad-link">Abstract</button>]
+                    [<button onclick="toggleDrawer('home-bib-1')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-1" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed">
+                    Co-led the conceptualization of the retrieval-augmented generation (RAG) compliance framework, designed the LLM-based reasoning pipeline and FIDES evaluation metric, and led the full experimental analysis for high-stakes medical advertisement regulation.
+                  </div>
+                  <div id="home-bib-1" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-1-raw').textContent, 'Copied BibTeX for VietCheckMed (AAAI 2026)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-1-raw" class="overflow-x-auto">@inproceedings{tam2026vietcheckmed,
+  author    = {Tam, N. T. and Hoa, T. T. and Tran, Khanh Quoc and Nguyen, Binh Thanh},
+  title     = {VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+  year      = {2026}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 2. ViFactCheck -->
+                <li class="pl-1">
+                  T. T. Hoa, T. Q. Duy, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-2')" class="acad-link italic">ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese.</a>
+                  AAAI Conference on Artificial Intelligence (AAAI), 2025.
+                  <span class="impact-highlight">Oral Presentation · Deployed in VNUHCM-UIT production verification systems.</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-2')" class="acad-link">Abstract</button>]
+                    [<button onclick="toggleDrawer('home-bib-2')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-2" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed">
+                    Co-led the conceptualization and construction of Vietnam's largest multi-domain fact-checking benchmark; designed SOTA baselines using Gemma and XLM-RoBERTa and led fine-grained reasoning analysis across diverse news domains.
+                  </div>
+                  <div id="home-bib-2" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-2-raw').textContent, 'Copied BibTeX for ViFactCheck (AAAI 2025)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-2-raw" class="overflow-x-auto">@inproceedings{hoa2025vifactcheck,
+  author    = {Hoa, T. T. and Duy, T. Q. and Tran, Khanh Quoc and Nguyen, Kiet Van},
+  title     = {ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+  year      = {2025},
+  note      = {Oral Presentation}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 3. Open-ViTabQA -->
+                <li class="pl-1">
+                  D. H. Dao, N. T. K. Huynh, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-3')" class="acad-link italic">Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table.</a>
+                  Knowledge-Based Systems (KBS), 2025.
+                  <span class="impact-highlight">(SCIE Q1, IF: 8.8) · Over 5,000+ paper views since preprint.</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-3')" class="acad-link">Abstract</button>]
+                    [<button onclick="toggleDrawer('home-bib-3')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-3" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed">
+                    Co-designed the BIF evaluation metric capturing logical consistency and semantic nuance in multi-hop table reasoning; co-led dataset curation to increase structural complexity across open-domain Wikipedia tables.
+                  </div>
+                  <div id="home-bib-3" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-3-raw').textContent, 'Copied BibTeX for Open-ViTabQA (KBS 2025)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-3-raw" class="overflow-x-auto">@article{dao2025openvitabqa,
+  author    = {Dao, D. H. and Huynh, N. T. K. and Tran, Khanh Quoc and Nguyen, Kiet Van},
+  title     = {Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table},
+  journal   = {Knowledge-Based Systems},
+  year      = {2025}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 4. ViHOS -->
+                <li class="pl-1">
+                  P. G. Hoang, C. D. Luu, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>, N. L.-T. Nguyen.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-4')" class="acad-link italic">ViHOS: Hate Speech Spans Detection for Vietnamese.</a>
+                  Conference of the European Chapter of the Association for Computational Linguistics (EACL), 2023.
+                  <span class="impact-highlight">Oral Presentation · Pioneered span-level Explainable AI (XAI) for Vietnamese safety.</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-4')" class="acad-link">Abstract</button>]
+                    [<button onclick="toggleDrawer('home-bib-4')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-4" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed">
+                    Pioneered the shift from coarse binary classification to explainable character/token span detection, enabling fine-grained, human-interpretable moderation rationales across Transformer architectures (XLM-R, PhoBERT).
+                  </div>
+                  <div id="home-bib-4" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-4-raw').textContent, 'Copied BibTeX for ViHOS (EACL 2023)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-4-raw" class="overflow-x-auto">@inproceedings{hoang2023vihos,
+  author    = {Hoang, Phu Gia and Luu, Canh Duc and Tran, Khanh Quoc and Nguyen, Kiet Van and Nguyen, Ngan Luu-Thuy},
+  title     = {ViHOS: Hate Speech Spans Detection for Vietnamese},
+  booktitle = {Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
+  year      = {2023}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 5. PhoBERT-CNN -->
+                <li class="pl-1">
+                  <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, A. T. Nguyen, P. G. Hoang, C. D. Luu, T. H. Do, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-5')" class="acad-link italic">Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data.</a>
+                  Neural Computing and Applications (NCA), 2022.
+                  <span class="impact-highlight">(First Author · SCIE Q1, IF: 6.0) · Awarded VNU-HCMC President's Certificate of Merit.</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-5')" class="acad-link">Abstract</button>]
+                    [<button onclick="toggleDrawer('home-bib-5')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-5" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed">
+                    Conceptualized, designed, and implemented the parameter-efficient PhoBERT-CNN architecture outperforming pure Transformer baselines; integrated into UIT-ViSomCens with a 30% reduction in human moderation overhead.
+                  </div>
+                  <div id="home-bib-5" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-5-raw').textContent, 'Copied BibTeX for PhoBERT-CNN (NCA 2022)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-5-raw" class="overflow-x-auto">@article{tran2022vietnamese,
+  author    = {Tran, Khanh Quoc and Nguyen, An Trong and Hoang, Phu Gia and Luu, Canh Duc and Do, Trong-Hop and Nguyen, Kiet Van},
+  title     = {Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data},
+  journal   = {Neural Computing and Applications},
+  year      = {2022}
+}</pre>
+                  </div>
+                </li>
+
+              </ol>
+            </div>
+
+            <!-- SUB-PANE B: Student Mentorship & Collaborative Papers -->
+            <div id="home-pub-student" class="hidden pt-1 space-y-3">
+              <p class="italic text-[14.5px] body-copy">
+                Papers and research projects done by undergraduate students I have mentored, supervised, or collaborated with closely at VNUHCM-UIT &amp; AISIA Lab (100+ students mentored, leading to 20 student-led publications at AAAI, PACLIC, and VLSP):
+              </p>
+              <ol class="list-decimal list-outside ml-5 space-y-3.5 text-[14.8px] body-copy">
+                <li class="pl-1">
+                  N. T. Tam, T. T. Hoa, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>*, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">B. T. Nguyen</a>.
+                  <span class="acad-link italic">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements.</span>
+                  AAAI Conference on Artificial Intelligence (AAAI), 2026.
+                  <span class="impact-highlight">Mentored student research team from conceptualization to AAAI acceptance.</span>
+                </li>
+                <li class="pl-1">
+                  T. T. Hoa, T. Q. Duy, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
+                  <span class="acad-link italic">ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese.</span>
+                  AAAI Conference on Artificial Intelligence (AAAI), 2025.
+                  <span class="impact-highlight">(Oral Presentation) · Student-led benchmark curation &amp; LLM evaluation.</span>
+                </li>
+                <li class="pl-1">
+                  D. H. Dao, N. T. K. Huynh, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
+                  <span class="acad-link italic">Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table.</span>
+                  Knowledge-Based Systems (SCIE Q1, IF: 8.8), 2025.
+                  <span class="impact-highlight">Supervised undergraduate thesis &amp; open-source Hugging Face release (5K+ Paper views).</span>
+                </li>
+                <li class="pl-1">
+                  Student Research Groups supervised at VNUHCM-UIT (2021–2025).
+                  <span class="acad-link italic">17 Additional Student-Led Publications across PACLIC (including PACLIC 36 Best Paper 1st Runner-up) and VLSP Shared Tasks.</span>
+                  <span class="impact-highlight">Coached team UIT-VINSV to 3rd Place at the UIT Data Science Contest 2023.</span>
+                </li>
+              </ol>
+            </div>
+
+            <!-- SUB-PANE C: Systems & Open-Source Artifacts (With Hyperlinked Collaborators!) -->
+            <div id="home-pub-systems" class="hidden pt-1 space-y-3">
+              <p class="italic text-[14.5px] body-copy">
+                Production open-source compilers and research infrastructure bridging algorithmic theory and developer workflows:
+              </p>
+              <ol class="list-decimal list-outside ml-5 space-y-3.5 text-[14.8px] body-copy">
+                <li class="pl-1">
+                  <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>,
+                  <a href="https://github.com/pinanek" target="_blank" rel="noopener" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link font-medium">Ngo Duc Hoang Son (@pinanek)</a>,
+                  and community contributors (<a href="https://github.com/tyza66" target="_blank" rel="noopener" onmouseenter="showCollab(event, 'tyza66')" onmouseleave="hideCollab()" class="collab-link">@tyza66</a>).
+                  <a href="https://github.com/khanhtq29vn/contextcraft" target="_blank" class="acad-link italic">ContextCraft: AST-Aware, Dependency-Graph-Ranked, Token-Budgeted Semantic Codebase Compressor for LLMs.</a>
+                  Rust + PyO3 Core &amp; Python SDK (<code class="font-mono text-[13px]">contextcraft-ai</code> on PyPI), 2026.
+                  <span class="impact-highlight">Compiles 30,018 files (home-assistant/core) in 7.21s (17.59× faster than Python).</span>
+                </li>
+                <li class="pl-1">
+                  <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>.
+                  <span class="acad-link italic">AgentScaffold.io: Composable Stack-Fragment Registry &amp; Multi-Target Rule Compiler for AI Coding Agents.</span>
+                  Open-Source Developer Tooling Initiative (Project #02), 2026.
+                </li>
+              </ol>
+            </div>
+
+          </section>
+
+          <!-- ============================================================= -->
+          <!-- `| Open-Source Spotlight` (WITH COLLABORATOR AVATAR STRIP)    -->
+          <!-- ============================================================= -->
+          <section class="space-y-3.5 pt-2">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 class="section-bar text-[19px] font-bold tracking-tight">
+                Open-Source Systems Spotlight: ContextCraft
+              </h2>
+              <button onclick="switchView('systems')" class="text-xs font-mono acad-link">
+                [Open Interactive AST &amp; Knapsack Simulator →]
+              </button>
+            </div>
+
+            <p class="text-[14.5px] body-copy">
+              <strong>ContextCraft</strong> (<a href="https://github.com/khanhtq29vn/contextcraft" target="_blank" class="acad-link">GitHub</a> · <a href="https://pypi.org/project/contextcraft-ai/" target="_blank" class="acad-link">PyPI</a> · <a href="https://khanhtq29vn.github.io/contextcraft/" target="_blank" class="acad-link">Astro Docs</a>) solves the <em>Multiple-Choice Knapsack Problem (MCKP)</em> over 35 Tree-sitter language grammars and Personalized PageRank + BM25F graphs. With our new <strong>Rust + Rayon + PyO3</strong> engine, it compresses a <code class="font-mono text-[13px]">119,813</code>-token repository into an exact <code class="font-mono text-[13px]">7,991 / 8,000</code>-token budget (<strong>14.99×</strong>) and processes <code class="font-mono text-[13px]">home-assistant/core</code> (<strong>30,018 files</strong>) in <strong>7.214 seconds</strong>.
+            </p>
+
+            <!-- Cheerful & Respectful Collaborator Attribution Strip (Zero Bloat, High Craftsmanship) -->
+            <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 rounded-md subtle-box border text-[13px]">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="muted-copy font-medium">Built with gratitude alongside:</span>
+
+                <!-- @khanhtq29vn -->
+                <a
+                  href="https://github.com/khanhtq29vn"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition"
+                >
+                  <img src="https://github.com/khanhtq29vn.png?size=48" alt="@khanhtq29vn" class="w-4 h-4 rounded-full" onerror="this.style.display='none'" />
+                  <span class="font-mono text-[11.5px] font-medium">@khanhtq29vn</span>
+                  <span class="text-[10.5px] muted-copy">(Creator)</span>
+                </a>
+
+                <!-- @pinanek (Ngo Duc Hoang Son) -->
+                <a
+                  href="https://github.com/pinanek"
+                  target="_blank"
+                  rel="noopener"
+                  onmouseenter="showCollab(event, 'pinanek')"
+                  onmouseleave="hideCollab()"
+                  class="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition"
+                >
+                  <img src="https://github.com/pinanek.png?size=48" alt="@pinanek" class="w-4 h-4 rounded-full" onerror="this.style.display='none'" />
+                  <span class="font-mono text-[11.5px] font-medium text-[#3B97B6]">Ngo Duc Hoang Son (@pinanek)</span>
+                  <span class="text-[10.5px] muted-copy">(Co-Creator · Rust &amp; AST Core)</span>
+                </a>
+
+                <!-- @tyza66 -->
+                <a
+                  href="https://github.com/tyza66"
+                  target="_blank"
+                  rel="noopener"
+                  onmouseenter="showCollab(event, 'tyza66')"
+                  onmouseleave="hideCollab()"
+                  class="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition"
+                >
+                  <img src="https://github.com/tyza66.png?size=48" alt="@tyza66" class="w-4 h-4 rounded-full" onerror="this.style.display='none'" />
+                  <span class="font-mono text-[11.5px] font-medium text-[#3B97B6]">@tyza66</span>
+                  <span class="text-[10.5px] muted-copy">(Contributor · #17)</span>
+                </a>
+              </div>
+
+              <!-- 1-Click Copy Quickstart Command -->
+              <button
+                onclick="copyText('uvx contextcraft-ai . --budget 8k -o context.md', 'Copied CLI command: uvx contextcraft-ai . --budget 8k -o context.md')"
+                class="font-mono text-[11.5px] acad-link shrink-0"
+                title="Click to copy uvx quickstart command"
+              >
+                $ uvx contextcraft-ai . --budget 8k [Copy]
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 2: PUBLICATIONS (CHRONOLOGICAL + FILTER PILLS)             -->
+        <!-- =============================================================== -->
+        <div id="view-publications" class="hidden space-y-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-4">
+            <div>
+              <h2 class="section-bar text-[22px] font-bold tracking-tight">
+                Publications
+              </h2>
+              <p class="italic text-[14px] muted-copy mt-2">
+                (*) denotes equal contribution / co-first authorship. Full citation metrics on <a href="https://scholar.google.com/citations?user=hrjGE18AAAAJ" target="_blank" class="acad-link">Google Scholar</a>.
+              </p>
+            </div>
+
+            <input
+              type="text"
+              id="pubSearchInput"
+              oninput="filterChronologicalPubs(this.value)"
+              placeholder="Filter by keyword, venue, or co-author..."
+              class="px-3 py-1.5 rounded border hairline bg-transparent text-xs font-mono w-64 focus:outline-none focus:border-[#3B97B6]"
+            />
+          </div>
+
+          <!-- Smart Category Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="filterPubCategory('all', this)" class="pub-cat-pill pub-pill active">All Papers (5)</button>
+            <button onclick="filterPubCategory('first', this)" class="pub-cat-pill pub-pill">First &amp; Co-First Author (2)</button>
+            <button onclick="filterPubCategory('oral', this)" class="pub-cat-pill pub-pill">AAAI &amp; EACL Orals (2)</button>
+            <button onclick="filterPubCategory('q1', this)" class="pub-cat-pill pub-pill">SCIE Q1 Journals (2)</button>
+          </div>
+
+          <!-- 2026 -->
+          <div class="pub-year-group space-y-4">
+            <h3 class="text-[16px] font-semibold text-slate-800 dark:text-slate-200 border-b hairline pb-1">2026</h3>
+            <div class="space-y-4 pl-2">
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="first aaai">
+                <div>
+                  <span class="muted-copy mr-1">5.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-5')" class="acad-link font-medium">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  N. T. Tam*, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>*, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Binh Thanh Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)</em> · <span class="impact-highlight">Accepted (Co-first author, Pending Patent)</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-5')" class="acad-link">Abstract</button>]
+                    [<button onclick="copyText('Tam, N. T., Hoa, T. T., Tran, K. Q., & Nguyen, B. T. (2026). VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements. In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-5" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Co-led the RAG framework and FIDES reasoning evaluation metric for medical advertisement compliance checking with the Ho Chi Minh City Department of Health.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="pub-year-group space-y-4">
+            <h3 class="text-[16px] font-semibold text-slate-800 dark:text-slate-200 border-b hairline pb-1">2025</h3>
+            <div class="space-y-5 pl-2">
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="q1">
+                <div>
+                  <span class="muted-copy mr-1">4.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-4')" class="acad-link font-medium">Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  D. H. Dao, N. T. K. Huynh, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">Kiet Van Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Knowledge-Based Systems (KBS 2025)</em> · <span class="impact-highlight">SCIE Q1 (Impact Factor: 8.8) · 5K+ Paper Views</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-4')" class="acad-link">Abstract</button>]
+                    [<button onclick="copyText('Dao, D. H., Huynh, N. T. K., Tran, K. Q., & Nguyen, K. V. (2025). Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table. Knowledge-Based Systems.', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-4" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Addresses multi-hop reasoning on complex tabular structures via the BIF logical consistency metric.
+                </div>
+              </div>
+
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="oral aaai">
+                <div>
+                  <span class="muted-copy mr-1">3.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-3')" class="acad-link font-medium">ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  T. T. Hoa, T. Q. Duy, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">Kiet Van Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Proceedings of the 39th AAAI Conference on Artificial Intelligence (AAAI 2025)</em> · <span class="impact-highlight">Oral Presentation</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-3')" class="acad-link">Abstract</button>]
+                    [<button onclick="copyText('Hoa, T. T., Duy, T. Q., Tran, K. Q., & Nguyen, K. V. (2025). ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese. In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-3" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Vietnam's largest multi-domain news fact-checking benchmark with Gemma and XLM-R reasoning baselines.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="pub-year-group space-y-4">
+            <h3 class="text-[16px] font-semibold text-slate-800 dark:text-slate-200 border-b hairline pb-1">2023</h3>
+            <div class="space-y-4 pl-2">
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="oral">
+                <div>
+                  <span class="muted-copy mr-1">2.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-2')" class="acad-link font-medium">ViHOS: Hate Speech Spans Detection for Vietnamese</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  Phu Gia Hoang, Canh Duc Luu, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">Kiet Van Nguyen</a>, Ngan Luu-Thuy Nguyen
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2023)</em> · <span class="impact-highlight">Oral Presentation</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-2')" class="acad-link">Abstract</button>]
+                    [<button onclick="copyText('Hoang, P. G., Luu, C. D., Tran, K. Q., Nguyen, K. V., & Nguyen, N. L. T. (2023). ViHOS: Hate Speech Spans Detection for Vietnamese. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (EACL).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-2" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Moves beyond binary hate speech classification to fine-grained character/token span detection for Explainable AI (XAI).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="pub-year-group space-y-4">
+            <h3 class="text-[16px] font-semibold text-slate-800 dark:text-slate-200 border-b hairline pb-1">2022</h3>
+            <div class="space-y-4 pl-2">
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="first q1">
+                <div>
+                  <span class="muted-copy mr-1">1.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-1')" class="acad-link font-medium">Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>, An Trong Nguyen, Phu Gia Hoang, Canh Duc Luu, Trong-Hop Do, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">Kiet Van Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Neural Computing and Applications (NCA 2022)</em> · <span class="impact-highlight">First Author · SCIE Q1 (Impact Factor: 6.0)</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-1')" class="acad-link">Abstract</button>]
+                    [<button onclick="copyText('Tran, K. Q., Nguyen, A. T., Hoang, P. G., Luu, C. D., Do, T. H., & Nguyen, K. V. (2022). Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data. Neural Computing and Applications.', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-1" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Parameter-efficient hybrid PhoBERT-CNN architecture reducing moderation overhead by 30% on streaming social media data.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 3: SYSTEMS & CODE (PRINCIPAL ENGINEER INTERACTIVE DEMO)    -->
+        <!-- =============================================================== -->
+        <div id="view-systems" class="hidden space-y-8">
+          <div>
+            <h2 class="section-bar text-[22px] font-bold tracking-tight">
+              Open-Source Systems &amp; Algorithmic Engineering
+            </h2>
+            <p class="text-[14.5px] body-copy mt-2">
+              Beyond academic papers, I architect deterministic compilers and developer tools with strict static typing, parallel Rust execution, and mathematical guarantees.
+            </p>
+          </div>
+
+          <!-- Collaborators & Engineering Team Honor Card -->
+          <div class="p-4 rounded-lg subtle-box border space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="text-[14px] font-semibold">
+                ContextCraft Core Engineering &amp; Open-Source Contributors
+              </div>
+              <div class="font-mono text-xs space-x-3">
+                <a href="https://github.com/khanhtq29vn/contextcraft" target="_blank" class="acad-link">github.com/khanhtq29vn/contextcraft</a>
+                <span>·</span>
+                <a href="https://pypi.org/project/contextcraft-ai/" target="_blank" class="acad-link">PyPI: contextcraft-ai</a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <!-- Khanh -->
+              <a href="https://github.com/khanhtq29vn" target="_blank" rel="noopener" class="p-3 rounded bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition flex items-start space-x-3">
+                <img src="https://github.com/khanhtq29vn.png?size=72" alt="Tran Quoc Khanh" class="w-9 h-9 rounded-full border hairline shrink-0" onerror="this.style.display='none'" />
+                <div class="min-w-0 text-xs">
+                  <div class="font-semibold text-[13px] truncate">Tran Quoc Khanh</div>
+                  <div class="font-mono text-[11px] text-[#3B97B6]">@khanhtq29vn · Creator</div>
+                  <div class="muted-copy text-[11px] mt-1 leading-snug">Original MCKP formulation, PageRank graph &amp; 4-tier AST architecture.</div>
+                </div>
+              </a>
+
+              <!-- Son (@pinanek) -->
+              <a href="https://github.com/pinanek" target="_blank" rel="noopener" class="p-3 rounded bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition flex items-start space-x-3">
+                <img src="https://github.com/pinanek.png?size=72" alt="Ngo Duc Hoang Son" class="w-9 h-9 rounded-full border hairline shrink-0" onerror="this.style.display='none'" />
+                <div class="min-w-0 text-xs">
+                  <div class="font-semibold text-[13px] truncate">Ngo Duc Hoang Son</div>
+                  <div class="font-mono text-[11px] text-[#3B97B6]">@pinanek · Co-Creator</div>
+                  <div class="muted-copy text-[11px] mt-1 leading-snug">Rust + Rayon + PyO3 core migration (#34), 35-language pipeline (#19), BM25F (#23).</div>
+                </div>
+              </a>
+
+              <!-- @tyza66 -->
+              <a href="https://github.com/tyza66" target="_blank" rel="noopener" class="p-3 rounded bg-white dark:bg-[#0D1117] border hairline hover:border-[#3B97B6] transition flex items-start space-x-3">
+                <img src="https://github.com/tyza66.png?size=72" alt="tyza66" class="w-9 h-9 rounded-full border hairline shrink-0" onerror="this.style.display='none'" />
+                <div class="min-w-0 text-xs">
+                  <div class="font-semibold text-[13px] truncate">@tyza66</div>
+                  <div class="font-mono text-[11px] text-[#3B97B6]">Community Contributor</div>
+                  <div class="muted-copy text-[11px] mt-1 leading-snug">Contributed <code class="font-mono">--encoding</code> CLI tokenizer selection flag (#17 / #5).</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive 1: Live Multi-Budget Knapsack Allocation Simulator (8k vs 12k Real Telemetry!) -->
+          <div class="border hairline rounded-lg overflow-hidden">
+            <div class="px-5 py-3.5 subtle-box border-b hairline flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <span class="font-semibold text-[15.5px]">1. Live Multiple-Choice Knapsack (MCKP) Budget Simulator</span>
+                <p class="text-xs muted-copy">Switch token budgets below to observe how marginal utility density (&rho; = &Delta;U / &Delta;C) prevents "God Object" monopolization:</p>
+              </div>
+              <div class="flex items-center space-x-1.5 font-mono text-xs">
+                <button onclick="setBudgetSim('8k')" id="sim-btn-8k" class="px-3 py-1 rounded bg-[#3B97B6] text-white font-semibold">--budget 8k (14.99×)</button>
+                <button onclick="setBudgetSim('12k')" id="sim-btn-12k" class="px-3 py-1 rounded border hairline hover:border-[#3B97B6]">--budget 12k (9.99×)</button>
+              </div>
+            </div>
+
+            <div class="p-4 space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-[12px] pb-2 border-b hairline">
+                <span id="simSummaryText" class="font-semibold text-[#3B97B6]">Compiled: 7,991 / 8,000 tokens (99.9% utilization · 93.3% saved from 119,813 raw tokens)</span>
+                <span id="simTierCounts" class="muted-copy">FULL: 5 | SKEL: 15 | SIGS: 9 | TREE: 229</span>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse font-mono text-[12px]">
+                  <thead>
+                    <tr class="border-b hairline muted-copy">
+                      <th class="py-2">Top Architectural File (by Personalized PageRank)</th>
+                      <th class="py-2 text-center">PageRank</th>
+                      <th class="py-2 text-center">Assigned Tier</th>
+                      <th class="py-2 text-right">Selected / Raw Tokens</th>
+                      <th class="py-2 text-right">Why this tier?</th>
+                    </tr>
+                  </thead>
+                  <tbody id="simTableBody" class="divide-y hairline"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive 2: AST Fidelity & Rust Benchmark Inspector -->
+          <div class="border hairline rounded-lg overflow-hidden">
+            <div class="px-5 py-3.5 subtle-box border-b hairline flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <span class="font-semibold text-[15.5px]">2. Interactive 4-Tier AST Elision Inspector</span>
+                <p class="text-xs muted-copy">Click any fidelity tier below to inspect how ContextCraft's Tree-sitter builder transforms source code:</p>
+              </div>
+              <div class="flex items-center space-x-1.5 font-mono text-xs">
+                <button onclick="setAstTier('FULL')" id="tier-btn-FULL" class="px-2.5 py-1 rounded bg-[#3B97B6] text-white font-semibold">[FULL] u=1.00</button>
+                <button onclick="setAstTier('SKEL')" id="tier-btn-SKEL" class="px-2.5 py-1 rounded border hairline hover:border-[#3B97B6]">[SKEL] u=0.82</button>
+                <button onclick="setAstTier('SIGS')" id="tier-btn-SIGS" class="px-2.5 py-1 rounded border hairline hover:border-[#3B97B6]">[SIGS] u=0.45</button>
+                <button onclick="setAstTier('TREE')" id="tier-btn-TREE" class="px-2.5 py-1 rounded border hairline hover:border-[#3B97B6]">[TREE] u=0.00</button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x hairline">
+              <!-- Live Code Output -->
+              <div class="lg:col-span-7 p-4 bg-slate-950 text-slate-100 font-mono text-xs">
+                <div class="flex items-center justify-between text-[11px] text-slate-400 pb-2 mb-2 border-b border-slate-800">
+                  <span id="astFileLabel">contextcraft/languages/structural.py [FULL — 2,523 tokens]</span>
+                  <span id="astSavingsBadge" class="text-emerald-400 font-semibold">100% implementation retained</span>
+                </div>
+                <pre id="astCodePreview" class="overflow-x-auto leading-relaxed text-[11.5px]">import hmac
+from contextcraft.ast import ByteRange, ParsedAst, Symbol
+
+class StructuralSkeletonBuilder(SkeletonBuilder):
+    """Surgically elides function bodies in reverse byte order."""
+
+    def build(self, parsed: ParsedAst) -> str:
+        if parsed.has_errors:
+            return parsed.source.decode("utf-8")
+        replacements = sorted(
+            self._replacements(parsed),
+            key=lambda edit: (edit[0].start_byte, -edit[0].end_byte),
+        )
+        buffer = bytearray(parsed.source)
+        for span, content in reversed(replacements):
+            buffer[span.start_byte : span.end_byte] = content
+        return buffer.decode("utf-8")</pre>
+              </div>
+
+              <!-- Rust + Rayon Benchmark Table -->
+              <div class="lg:col-span-5 p-4 space-y-3 text-xs body-copy">
+                <div class="font-semibold text-sm text-black dark:text-white">
+                  Rust + Rayon + PyO3 Engine Benchmark
+                </div>
+                <p class="leading-relaxed">
+                  Evaluated on <strong><code class="font-mono">home-assistant/core</code> (30,018 files)</strong> with GIL release and parallel Rayon workers (<a href="https://github.com/khanhtq29vn/contextcraft/pull/34" target="_blank" class="acad-link">PR #34 by @pinanek</a>):
+                </p>
+                <table class="w-full text-left border-collapse font-mono text-[11.5px]">
+                  <thead>
+                    <tr class="border-b hairline muted-copy">
+                      <th class="py-1.5">Engine</th>
+                      <th class="py-1.5 text-right">Wall Time</th>
+                      <th class="py-1.5 text-right">Peak RAM</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y hairline">
+                    <tr>
+                      <td class="py-1.5">Baseline Python</td>
+                      <td class="py-1.5 text-right">1,753.21 s</td>
+                      <td class="py-1.5 text-right">53.0 GB</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5">Optimized Python</td>
+                      <td class="py-1.5 text-right">126.91 s</td>
+                      <td class="py-1.5 text-right">925.8 MB</td>
+                    </tr>
+                    <tr class="font-bold text-[#3B97B6]">
+                      <td class="py-1.5">Rust + PyO3 (Ours)</td>
+                      <td class="py-1.5 text-right">7.214 s</td>
+                      <td class="py-1.5 text-right">1.54 GB</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pt-1 font-mono text-[11px] impact-highlight">
+                  ⚡ 17.59× faster than optimized Python · 1083.4% multi-core CPU
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 4: TEACHING & ACADEMIC MENTORSHIP                          -->
+        <!-- =============================================================== -->
+        <div id="view-teaching" class="hidden space-y-6">
+          <h2 class="section-bar text-[22px] font-bold tracking-tight">
+            Teaching &amp; Student Mentorship
+          </h2>
+
+          <div class="space-y-6 body-copy">
+            <div>
+              <h3 class="text-[17px] font-semibold acad-link">
+                Applied NLP for Social Good (Undergraduate Research Seminar)
+              </h3>
+              <div class="text-[14px] muted-copy">
+                Seminar Founder &amp; Lead Instructor, <em>VNUHCM – University of Information Technology (VNUHCM-UIT), Faculty of Information Science and Engineering</em>, 2023 – Present
+              </div>
+              <p class="mt-1.5 text-[14.5px]">
+                Conceptualized and launched a specialized undergraduate research seminar focusing on Trustworthy AI, fact-checking, explainable hate speech detection, and ethical deployment of low-resource language models.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[17px] font-semibold acad-link">
+                Machine Learning &amp; Social Media Mining (Undergraduate &amp; Graduate Courses)
+              </h3>
+              <div class="text-[14px] muted-copy">
+                Teaching Assistant &amp; Curriculum Co-Developer, <em>VNUHCM – University of Information Technology</em>, Sep 2021 – Present
+              </div>
+              <p class="mt-1.5 text-[14.5px]">
+                Co-developed lecture materials, hands-on PyTorch laboratories, and programming assignments integrating contemporary findings from ACL, EMNLP, AAAI, and NeurIPS. Led technical workshops on <em>Transformer Architectures &amp; Parameter-Efficient Fine-Tuning (LoRA / Unsloth)</em> for 200+ students.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[17px] font-semibold acad-link">
+                Undergraduate Thesis &amp; Research Mentorship (100+ Students Mentored)
+              </h3>
+              <div class="text-[14px] muted-copy">
+                Research Advisor &amp; Mentor, <em>VNUHCM-UIT &amp; AISIA Research Lab</em>, 2021 – Present
+              </div>
+              <ul class="list-disc list-outside ml-5 mt-1.5 space-y-1 text-[14.5px]">
+                <li>Supervised <strong>10+ undergraduate research projects</strong> and mentored <strong>100+ students</strong>, resulting in <strong>20+ diverse research outcomes and featured publications</strong> at AAAI, PACLIC, and VLSP.</li>
+                <li>Coached team <strong>UIT-VINSV</strong> to win <strong>3rd Place</strong> at the UIT Data Science Contest 2023.</li>
+                <li>Core faculty member for <strong>ASIIN International Accreditation</strong>, aligning the Data Science curriculum with European and global quality standards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 5: HONORS & FELLOWSHIPS                                    -->
+        <!-- =============================================================== -->
+        <div id="view-honors" class="hidden space-y-6">
+          <h2 class="section-bar text-[22px] font-bold tracking-tight">
+            Honors, Fellowships &amp; Academic Service
+          </h2>
+
+          <div class="space-y-3.5 text-[14.8px] body-copy">
+            <div>
+              <strong>[2026] Valedictorian (Ranked 1st out of 40, GPA: 9.3/10.0)</strong> — M.Sc. in Data Science, VNUHCM – University of Science.
+            </div>
+            <div>
+              <strong>[2025] Finalist / Top-Ranked Team (Top 30 out of 2,600+ teams &amp; 9,100+ contestants)</strong> — <em>Data for Life 2025</em> International Competition, Hanoi.
+            </div>
+            <div>
+              <strong>[2025] Advanced Youth Role Model</strong> — VNUHCM Youth Union (for sustained excellence in research and community leadership, 2021–2024).
+            </div>
+            <div>
+              <strong>[2024] Outstanding Reviewer Award</strong> — Empirical Methods in Natural Language Processing (<strong>EMNLP 2024</strong>).
+            </div>
+            <div>
+              <strong>[2024] VinIF Master's Scholarship</strong> — Vingroup Innovation Foundation (<span class="impact-highlight">1 of 48 scholars selected nationwide</span>).
+            </div>
+            <div>
+              <strong>[2024] Exemplary Young Staff Role Model</strong> — VNUHCM Director's Award.
+            </div>
+            <div>
+              <strong>[2022] Best Paper Award (1st Runner-up)</strong> — 36th Pacific Asia Conference on Language, Information and Computation (<strong>PACLIC 36</strong>).
+            </div>
+            <div>
+              <strong>[2022] Student with Five Good Merits (Central Level)</strong> — Minister of Education and Training of Vietnam.
+            </div>
+            <div>
+              <strong>[2021] Champion Award (1st Place, Entry Category)</strong> — <strong>Digital Water Hackathon</strong> (International competition held in Singapore).
+            </div>
+            <div>
+              <strong>[2021] Compliment Certificate from the President of VNU-HCMC</strong> — Awarded for first-author SCIE Q1 journal publication.
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 6: BLOG POSTS (WITH INTERACTIVE FULL-ARTICLE READER!)      -->
+        <!-- =============================================================== -->
+        <div id="view-blog" class="hidden space-y-6">
+
+          <!-- Blog Index List -->
+          <div id="blogIndexView" class="space-y-6">
+            <h2 class="section-bar text-[22px] font-bold tracking-tight">
+              Technical Blog &amp; Research Notes
+            </h2>
+
+            <div class="space-y-6 body-copy">
+              <article class="space-y-1.5 border-b hairline pb-5">
+                <div class="font-mono text-xs muted-copy">November 2026 · Systems, Compilers &amp; Rust · 8 min read</div>
+                <h3 class="text-[17.5px] font-semibold">
+                  <button onclick="openBlogPost('post-1')" class="acad-link text-left">
+                    Why Codebase Context Packing is a Multiple-Choice Knapsack Problem — and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
+                  </button>
+                </h3>
+                <p class="text-[14.5px]">
+                  How <a href="https://github.com/pinanek" target="_blank" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link">Ngo Duc Hoang Son (@pinanek)</a> and I combined Tree-sitter lexical scope graphs, length-normalized BM25F + Personalized PageRank, and marginal utility density (&rho; = &Delta;U / &Delta;C) to eliminate "God Object" token monopolization and achieve a 17.59× speedup over optimized Python.
+                </p>
+                <div class="pt-1">
+                  <button onclick="openBlogPost('post-1')" class="font-mono text-xs acad-link">[Read full technical post →]</button>
+                </div>
+              </article>
+
+              <article class="space-y-1.5">
+                <div class="font-mono text-xs muted-copy">January 2026 · Trustworthy &amp; Explainable AI · 6 min read</div>
+                <h3 class="text-[17.5px] font-semibold">
+                  <button onclick="openBlogPost('post-2')" class="acad-link text-left">
+                    From Binary Classification to Span-Level &amp; Regulatory Explainability in Low-Resource NLP (ViHOS → ViFactCheck → VietCheckMed)
+                  </button>
+                </h3>
+                <p class="text-[14.5px]">
+                  A retrospective on our four-year research arc building verifiable, human-interpretable NLP systems for Vietnamese—from character-span hate speech detection (EACL'23 Oral) to multi-domain news verification (AAAI'25 Oral) and medical regulatory compliance (AAAI'26).
+                </p>
+                <div class="pt-1">
+                  <button onclick="openBlogPost('post-2')" class="font-mono text-xs acad-link">[Read full research note →]</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Full Blog Post 1 Reader -->
+          <article id="blog-post-1" class="hidden space-y-5 body-copy">
+            <button onclick="closeBlogPost()" class="font-mono text-xs acad-link">← Back to all blog posts</button>
+            <div class="space-y-2 border-b hairline pb-4">
+              <div class="font-mono text-xs muted-copy">November 2026 · Co-authored with <a href="https://github.com/pinanek" target="_blank" class="acad-link">Ngo Duc Hoang Son (@pinanek)</a></div>
+              <h2 class="text-[24px] font-bold tracking-tight text-black dark:text-white leading-snug">
+                Why Codebase Context Packing is a Multiple-Choice Knapsack Problem — and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
+              </h2>
+            </div>
+
+            <div class="space-y-4 text-[15px] leading-[1.75] font-serif">
+              <p>
+                When feeding a repository into an LLM for architectural review or debugging, existing packers (<code class="font-mono text-xs">repomix</code>, <code class="font-mono text-xs">gitingest</code>) concatenate every file verbatim in alphabetical order. On a 119,813-token repository, truncating at an 8,000-token budget discards 88% of the codebase—blinding the model to core modules that happen to start with letters later in the alphabet.
+              </p>
+              <h3 class="font-sans text-[17px] font-bold text-black dark:text-white pt-2">1. Mathematical Formulation &amp; "God Object" Immunity</h3>
+              <p>
+                In <strong>ContextCraft</strong>, every file <code>i</code> is parsed via Tree-sitter into four monotonic AST representations <code>l</code> &in; {0, 1, 2, 3} (<code class="font-mono text-xs">TREE</code>, <code class="font-mono text-xs">SIGS</code>, <code class="font-mono text-xs">SKEL</code>, <code class="font-mono text-xs">FULL</code>) with concave semantic utilities <code>u(l)</code> &in; <code>{0.0, 0.45, 0.82, 1.00}</code>. Rather than greedily awarding <code class="font-mono text-xs">FULL</code> to the highest-PageRank file, our solver orders candidate upgrades by <strong>marginal utility density</strong>:
+              </p>
+              <div class="p-3.5 rounded subtle-box border font-mono text-xs text-center">
+                ρ(i, l → l') = [ PageRank(i; q) · (u(l') - u(l)) ] / [ C_eff(i, l') - C_eff(i, l) ]
+              </div>
+              <p>
+                Because &Delta;Tokens sits in the denominator, an oversized 2,523-token hub file like <code class="font-mono text-xs">structural.py</code> (6.9% PageRank) has a low marginal density for the jump from <code class="font-mono text-xs">SKEL</code> (389 tokens) to <code class="font-mono text-xs">FULL</code> (2,523 tokens). The solver automatically keeps <code class="font-mono text-xs">structural.py</code> at <code class="font-mono text-xs">SKEL</code>—saving 2,134 tokens so surrounding modules can retain full or skeletal fidelity.
+              </p>
+              <h3 class="font-sans text-[17px] font-bold text-black dark:text-white pt-2">2. Migrating the Engine to Rust + Rayon + PyO3 (PR #34)</h3>
+              <p>
+                To scale this pipeline to massive enterprise monorepos like <code class="font-mono text-xs">home-assistant/core</code> (30,018 files), <a href="https://github.com/pinanek" target="_blank" class="acad-link">Ngo Duc Hoang Son (@pinanek)</a> re-architected the compression engine in Rust with Rayon data parallelism and PyO3 bindings (releasing Python's GIL). Wall-clock time dropped from 1,753.21 seconds in our initial prototype and 126.91 seconds in optimized Python down to <strong>7.214 seconds</strong> (utilizing 1083.4% multi-core CPU).
+              </p>
+            </div>
+          </article>
+
+          <!-- Full Blog Post 2 Reader -->
+          <article id="blog-post-2" class="hidden space-y-5 body-copy">
+            <button onclick="closeBlogPost()" class="font-mono text-xs acad-link">← Back to all blog posts</button>
+            <div class="space-y-2 border-b hairline pb-4">
+              <div class="font-mono text-xs muted-copy">January 2026 · Trustworthy &amp; Explainable AI</div>
+              <h2 class="text-[24px] font-bold tracking-tight text-black dark:text-white leading-snug">
+                From Binary Classification to Span-Level &amp; Regulatory Explainability in Low-Resource NLP
+              </h2>
+            </div>
+
+            <div class="space-y-4 text-[15px] leading-[1.75] font-serif">
+              <p>
+                In high-stakes domains such as content moderation, multi-domain news verification, and medical advertisement regulation, black-box binary predictions ("hateful" vs. "clean", "compliant" vs. "violating") are insufficient for human decision-makers.
+              </p>
+              <p>
+                Across our research sequence from <strong>PhoBERT-CNN (NCA'22)</strong> and <strong>ViHOS (EACL'23 Oral)</strong> to <strong>ViFactCheck (AAAI'25 Oral)</strong> and <strong>VietCheckMed (AAAI'26)</strong>, we systematically shifted low-resource Vietnamese NLP from coarse sequence classification to fine-grained character span extraction, multi-hop tabular verification (<strong>Open-ViTabQA, KBS'25</strong>), and retrieval-augmented regulatory compliance checking.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MINIMAL ACADEMIC FOOTER                                               -->
+  <!-- ===================================================================== -->
+  <footer class="border-t hairline mt-16 py-8">
+    <div class="max-w-[1040px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between text-[12.5px] muted-copy gap-2">
+      <div>
+        © 2026 Tran Quoc Khanh. Built with clean semantic typography.
+      </div>
+      <div class="font-mono text-[11.5px]">
+        Singapore · <a href="https://github.com/khanhtq29vn" target="_blank" class="acad-link">github.com/khanhtq29vn</a> · Shortcuts: <kbd class="px-1 py-0.5 border hairline rounded text-[10px]">1–6</kbd> or <kbd class="px-1 py-0.5 border hairline rounded text-[10px]">⌘K</kbd>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- COMMAND PALETTE MODAL (⌘K)                                            -->
+  <!-- ===================================================================== -->
+  <div id="cmdModal" class="fixed inset-0 z-50 hidden bg-black/50 flex items-start justify-center pt-24 px-4" onclick="if(event.target === this) closeCommandModal()">
+    <div class="w-full max-w-lg rounded-lg bg-white dark:bg-[#161B22] border hairline shadow-2xl overflow-hidden">
+      <div class="px-4 py-3 border-b hairline flex items-center justify-between">
+        <input
+          type="text"
+          id="cmdInput"
+          oninput="renderCommandList(this.value)"
+          placeholder="Search publications, collaborators (@pinanek), systems, or awards..."
+          class="w-full bg-transparent text-sm focus:outline-none"
+        />
+        <button onclick="closeCommandModal()" class="font-mono text-xs muted-copy ml-2">ESC</button>
+      </div>
+      <div id="cmdList" class="max-h-72 overflow-y-auto divide-y hairline text-xs"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE SCRIPTS                                                   -->
+  <!-- ===================================================================== -->
+  <script>
+    const VIEWS = ["overview", "publications", "systems", "teaching", "honors", "blog"];
+
+    function switchView(target, updateHash = true) {
+      if (!VIEWS.includes(target)) target = "overview";
+      VIEWS.forEach(v => {
+        const pane = document.getElementById("view-" + v);
+        const nav = document.getElementById("nav-" + v);
+        const mnav = document.getElementById("mnav-" + v);
+        if (pane) pane.classList.toggle("hidden", v !== target);
+        if (nav) nav.classList.toggle("active", v === target);
+        if (mnav) {
+          mnav.className = (v === target)
+            ? "text-[#3B97B6] font-semibold shrink-0"
+            : "muted-copy shrink-0";
+        }
+      });
+      if (updateHash && history.replaceState) {
+        const hash = target === "overview" ? "#about" : "#" + target;
+        history.replaceState(null, "", hash);
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function switchHomePubTab(tab) {
+      ["selected", "student", "systems"].forEach(t => {
+        const pill = document.getElementById("pill-" + t);
+        const pane = document.getElementById("home-pub-" + t);
+        if (pill) pill.classList.toggle("active", t === tab);
+        if (pane) pane.classList.toggle("hidden", t !== tab);
+      });
+    }
+
+    function toggleNewsHeight(btn) {
+      const box = document.getElementById("newsContainer");
+      const isExpanded = box.classList.contains("max-h-[900px]");
+      if (isExpanded) {
+        box.classList.remove("max-h-[900px]");
+        box.classList.add("max-h-[205px]");
+        btn.textContent = "[Expand all 11 items]";
+      } else {
+        box.classList.remove("max-h-[205px]");
+        box.classList.add("max-h-[900px]");
+        btn.textContent = "[Collapse to scrollable view]";
+      }
+    }
+
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle("hidden");
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.remove("hidden");
+      setTimeout(() => t.classList.add("hidden"), 2200);
+    }
+
+    function copyText(text, toastMsg) {
+      navigator.clipboard.writeText(text);
+      showToast(toastMsg || "Copied to clipboard");
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle("dark");
+      document.getElementById("themeMoon").classList.toggle("hidden", isDark);
+      document.getElementById("themeSun").classList.toggle("hidden", !isDark);
+    }
+
+    // Collaborator & Advisor Hover Cards
+    const COLLAB_DATA = {
+      pinanek: {
+        name: "Ngo Duc Hoang Son",
+        handle: "github.com/pinanek (@pinanek)",
+        avatar: "https://github.com/pinanek.png?size=96",
+        role: "Co-Creator & Core Systems Architect · ContextCraft",
+        highlight: "Architected the Rust + Rayon + PyO3 core migration (#34: 7.21s on 30,018 files), 35-language pipeline (#19), and BM25F ranking (#23)."
+      },
+      tyza66: {
+        name: "@tyza66",
+        handle: "github.com/tyza66",
+        avatar: "https://github.com/tyza66.png?size=96",
+        role: "Open-Source Community Contributor · ContextCraft",
+        highlight: "First external community contributor; implemented the --encoding / -enc tokenizer CLI flag (#17) for o200k_base & cl100k_base."
+      },
+      binh: {
+        name: "Assoc. Prof. Binh Thanh Nguyen",
+        handle: "Head of Computer Science Dept., VNUHCM-US",
+        avatar: "",
+        role: "Principal Investigator · AISIA Research Lab",
+        highlight: "Research supervisor & co-author on VietCheckMed (AAAI 2026) and medical regulatory AI systems."
+      },
+      kiet: {
+        name: "Dr. Kiet Van Nguyen",
+        handle: "Dean, Faculty of ISE, VNUHCM-UIT",
+        avatar: "",
+        role: "Thesis Advisor & Principal Co-Author",
+        highlight: "Advisor on ViFactCheck (AAAI'25 Oral), Open-ViTabQA (KBS'25 Q1), ViHOS (EACL'23 Oral), and PhoBERT-CNN (NCA'22 Q1)."
+      }
+    };
+
+    function showCollab(e, key) {
+      const data = COLLAB_DATA[key];
+      if (!data) return;
+      const card = document.getElementById("collabCard");
+      const avatarEl = document.getElementById("collabAvatar");
+      if (data.avatar) {
+        avatarEl.src = data.avatar;
+        avatarEl.style.display = "block";
+      } else {
+        avatarEl.style.display = "none";
+      }
+      document.getElementById("collabName").textContent = data.name;
+      document.getElementById("collabHandle").textContent = data.handle;
+      document.getElementById("collabRole").textContent = data.role;
+      document.getElementById("collabHighlight").textContent = data.highlight;
+      const x = Math.min(e.clientX + 14, window.innerWidth - 340);
+      const y = Math.min(e.clientY + 18, window.innerHeight - 160);
+      card.style.left = Math.max(12, x) + "px";
+      card.style.top = Math.max(12, y) + "px";
+      card.classList.remove("hidden");
+    }
+
+    function hideCollab() {
+      document.getElementById("collabCard").classList.add("hidden");
+    }
+
+    // Hover Citation Preview Data
+    const CITE_DATA = {
+      vietcheckmed: {
+        venue: "AAAI 2026 · Co-First Author",
+        title: "VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements",
+        authors: "N. T. Tam*, T. T. Hoa*, Khanh Quoc Tran*, B. T. Nguyen",
+        impact: "Engineered for metropolitan public healthcare systems · Pending Patent"
+      },
+      vifactcheck: {
+        venue: "AAAI 2025 · Oral Presentation",
+        title: "ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese",
+        authors: "T. T. Hoa, T. Q. Duy, Khanh Quoc Tran, K. V. Nguyen",
+        impact: "Vietnam's largest multi-domain news fact-checking benchmark"
+      },
+      openvitabqa: {
+        venue: "Knowledge-Based Systems 2025 · SCIE Q1 (IF: 8.8)",
+        title: "Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table",
+        authors: "D. H. Dao, N. T. K. Huynh, Khanh Quoc Tran, K. V. Nguyen",
+        impact: "5,000+ paper views since preprint (BIF metric)"
+      },
+      vihos: {
+        venue: "EACL 2023 · Oral Presentation",
+        title: "ViHOS: Hate Speech Spans Detection for Vietnamese",
+        authors: "P. G. Hoang, C. D. Luu, Khanh Quoc Tran, et al.",
+        impact: "First span-level Explainable AI (XAI) hate speech dataset for Vietnamese"
+      },
+      phobertcnn: {
+        venue: "Neural Computing & Applications 2022 · First Author SCIE Q1 (IF: 6.0)",
+        title: "Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data",
+        authors: "Khanh Quoc Tran, A. T. Nguyen, P. G. Hoang, et al.",
+        impact: "Awarded VNU-HCMC President's Certificate of Merit · 30% lower overhead"
+      },
+      contextcraft: {
+        venue: "Open-Source System · Rust + PyO3 + Tree-sitter",
+        title: "ContextCraft (contextcraft-ai): AST-Aware, PageRank-Ranked Codebase Compressor",
+        authors: "Khanh Quoc Tran, Ngo Duc Hoang Son (@pinanek), @tyza66",
+        impact: "Compiles 30,018 files (home-assistant/core) in 7.214 seconds (17.59× speedup)"
+      }
+    };
+
+    function showCite(e, key) {
+      const data = CITE_DATA[key];
+      if (!data) return;
+      const card = document.getElementById("hoverCard");
+      document.getElementById("hoverCardVenue").textContent = data.venue;
+      document.getElementById("hoverCardTitle").textContent = data.title;
+      document.getElementById("hoverCardAuthors").textContent = data.authors;
+      document.getElementById("hoverCardImpact").textContent = data.impact;
+      const x = Math.min(e.clientX + 14, window.innerWidth - 400);
+      const y = Math.min(e.clientY + 18, window.innerHeight - 160);
+      card.style.left = Math.max(12, x) + "px";
+      card.style.top = Math.max(12, y) + "px";
+      card.classList.remove("hidden");
+    }
+
+    function hideCite() {
+      document.getElementById("hoverCard").classList.add("hidden");
+    }
+
+    // Live Multi-Budget Knapsack Simulator (Exact v0.3.0 Telemetry from Screenshots)
+    const BUDGET_SIM_DATA = {
+      "8k": {
+        summary: "Compiled: 7,991 / 8,000 tokens (99.9% utilization · 14.99× compression · 869.0 ms)",
+        counts: "FULL: 5 | SKEL: 15 | SIGS: 9 | TREE: 229",
+        rows: [
+          { path: "contextcraft/ast/__init__.py", pr: "13.7%", tier: "FULL", tok: "553 / 553", note: "Compact hub → 100% kept" },
+          { path: "contextcraft/languages/structural.py", pr: "6.9%", tier: "SKEL", tok: "389 / 2,523", note: "Large hub → SKEL saves 84.6% tokens" },
+          { path: "contextcraft/models.py", pr: "5.0%", tier: "SIGS", tok: "355 / 1,581", note: "Fits contracts in tight 8k budget" },
+          { path: "contextcraft/languages/base.py", pr: "5.0%", tier: "SKEL", tok: "550 / 998", note: "Preserves base classes & docstrings" },
+          { path: "pyproject.toml", pr: "3.9%", tier: "FULL", tok: "1,128 / 1,128", note: "Project manifest priority" }
+        ]
+      },
+      "12k": {
+        summary: "Compiled: 11,991 / 12,000 tokens (99.9% utilization · 9.99× compression · 892.1 ms)",
+        counts: "FULL: 10 | SKEL: 20 | SIGS: 10 | TREE: 218",
+        rows: [
+          { path: "contextcraft/ast/__init__.py", pr: "13.7%", tier: "FULL", tok: "553 / 553", note: "Compact hub → 100% kept" },
+          { path: "contextcraft/languages/structural.py", pr: "6.9%", tier: "SKEL", tok: "389 / 2,523", note: "Still SKEL! Avoids God-Object bloat" },
+          { path: "contextcraft/models.py", pr: "5.0%", tier: "FULL", tok: "1,581 / 1,581", note: "Upgraded SIGS → FULL with +4k budget!" },
+          { path: "contextcraft/languages/base.py", pr: "5.0%", tier: "SKEL", tok: "550 / 998", note: "Preserves base classes & docstrings" },
+          { path: "pyproject.toml", pr: "3.9%", tier: "FULL", tok: "1,128 / 1,128", note: "Project manifest priority" }
+        ]
+      }
+    };
+
+    function setBudgetSim(budgetKey) {
+      ["8k", "12k"].forEach(k => {
+        const btn = document.getElementById("sim-btn-" + k);
+        if (btn) {
+          btn.className = (k === budgetKey)
+            ? "px-3 py-1 rounded bg-[#3B97B6] text-white font-semibold"
+            : "px-3 py-1 rounded border hairline hover:border-[#3B97B6]";
+        }
+      });
+      const data = BUDGET_SIM_DATA[budgetKey];
+      document.getElementById("simSummaryText").textContent = data.summary;
+      document.getElementById("simTierCounts").textContent = data.counts;
+      const badgeColor = {
+        FULL: "text-emerald-600 dark:text-emerald-400 font-bold",
+        SKEL: "text-[#3B97B6] font-bold",
+        SIGS: "text-amber-600 dark:text-amber-400 font-bold"
+      };
+      document.getElementById("simTableBody").innerHTML = data.rows.map(r => `
+        <tr>
+          <td class="py-2 font-medium">${r.path}</td>
+          <td class="py-2 text-center">${r.pr}</td>
+          <td class="py-2 text-center ${badgeColor[r.tier] || ''}">[${r.tier}]</td>
+          <td class="py-2 text-right">${r.tok}</td>
+          <td class="py-2 text-right muted-copy">${r.note}</td>
+        </tr>
+      `).join("");
+    }
+
+    // AST Tier Interactive Demo
+    const AST_TIERS = {
+      FULL: {
+        label: "contextcraft/languages/structural.py [FULL — 2,523 tokens]",
+        badge: "100% implementation retained (u = 1.00)",
+        code: `import hmac
+from contextcraft.ast import ByteRange, ParsedAst, Symbol
+
+class StructuralSkeletonBuilder(SkeletonBuilder):
+    """Surgically elides function bodies in reverse byte order."""
+
+    def build(self, parsed: ParsedAst) -> str:
+        if parsed.has_errors:
+            return parsed.source.decode("utf-8")
+        replacements = sorted(
+            self._replacements(parsed),
+            key=lambda edit: (edit[0].start_byte, -edit[0].end_byte),
+        )
+        buffer = bytearray(parsed.source)
+        for span, content in reversed(replacements):
+            buffer[span.start_byte : span.end_byte] = content
+        return buffer.decode("utf-8")`
+      },
+      SKEL: {
+        label: "contextcraft/languages/structural.py [SKEL — 389 / 2,523 tokens]",
+        badge: "84.6% tokens saved · 100% types & docstrings kept (u = 0.82)",
+        code: `import hmac
+from contextcraft.ast import ByteRange, ParsedAst, Symbol
+
+class StructuralSkeletonBuilder(SkeletonBuilder):
+    """Surgically elides function bodies in reverse byte order."""
+
+    def build(self, parsed: ParsedAst) -> str:
+        ...`
+      },
+      SIGS: {
+        label: "contextcraft/languages/structural.py [SIGS — 180 / 2,523 tokens]",
+        badge: "92.8% tokens saved · Unused 'import hmac' trimmed (u = 0.45)",
+        code: `from contextcraft.ast import ParsedAst
+
+class StructuralSkeletonBuilder(SkeletonBuilder):
+    def build(self, parsed: ParsedAst) -> str: ...`
+      },
+      TREE: {
+        label: "contextcraft/languages/structural.py [TREE — 0 body tokens]",
+        badge: "Listed in repository architecture map only (u = 0.00)",
+        code: `contextcraft/
+├── ast/
+│   └── __init__.py [FULL] (PR: 13.7%)
+└── languages/
+    └── structural.py [TREE] (PR: 6.9% · 0 body tokens emitted)`
+      }
+    };
+
+    function setAstTier(tier) {
+      ["FULL", "SKEL", "SIGS", "TREE"].forEach(t => {
+        const btn = document.getElementById("tier-btn-" + t);
+        if (btn) {
+          btn.className = (t === tier)
+            ? "px-2.5 py-1 rounded bg-[#3B97B6] text-white font-semibold"
+            : "px-2.5 py-1 rounded border hairline hover:border-[#3B97B6]";
+        }
+      });
+      const item = AST_TIERS[tier];
+      document.getElementById("astFileLabel").textContent = item.label;
+      document.getElementById("astSavingsBadge").textContent = item.badge;
+      document.getElementById("astCodePreview").textContent = item.code;
+    }
+
+    function filterChronologicalPubs(q) {
+      const query = q.trim().toLowerCase();
+      document.querySelectorAll(".chrono-pub-item").forEach(el => {
+        el.classList.toggle("hidden", Boolean(query && !el.textContent.toLowerCase().includes(query)));
+      });
+    }
+
+    function filterPubCategory(cat, btnEl) {
+      document.querySelectorAll(".pub-cat-pill").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      document.querySelectorAll(".chrono-pub-item").forEach(el => {
+        const tags = (el.getAttribute("data-tags") || "").split(" ");
+        el.classList.toggle("hidden", cat !== "all" && !tags.includes(cat));
+      });
+    }
+
+    function openBlogPost(postId) {
+      document.getElementById("blogIndexView").classList.add("hidden");
+      document.getElementById("blog-post-1").classList.toggle("hidden", postId !== "post-1");
+      document.getElementById("blog-post-2").classList.toggle("hidden", postId !== "post-2");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function closeBlogPost() {
+      document.getElementById("blogIndexView").classList.remove("hidden");
+      document.getElementById("blog-post-1").classList.add("hidden");
+      document.getElementById("blog-post-2").classList.add("hidden");
+    }
+
+    // Command Modal
+    const CMD_ITEMS = [
+      { title: "VietCheckMed (AAAI 2026 · Co-first author)", sub: "Medical regulatory compliance checking · HCMC Dept. of Health", view: "publications" },
+      { title: "ViFactCheck (AAAI 2025 · Oral Presentation)", sub: "Multi-domain Vietnamese news fact-checking benchmark", view: "publications" },
+      { title: "Open-ViTabQA (Knowledge-Based Systems 2025 · SCIE Q1 IF: 8.8)", sub: "Complex table question answering · 5K+ Paper Views", view: "publications" },
+      { title: "ViHOS (EACL 2023 · Oral Presentation)", sub: "Explainable hate speech spans detection for Vietnamese", view: "publications" },
+      { title: "PhoBERT-CNN (Neural Computing & Applications 2022 · First Author Q1)", sub: "Streaming hate speech detection · VNU-HCMC President's Award", view: "publications" },
+      { title: "ContextCraft (Rust + Rayon + PyO3 Core)", sub: "Co-created with Ngo Duc Hoang Son (@pinanek) · 7.21s on 30,018 files", view: "systems" },
+      { title: "Ngo Duc Hoang Son (@pinanek) — GitHub Collaborator", sub: "Co-Creator of ContextCraft · PR #34 Rust Core & PR #19 35-Language Pipeline", view: "systems" },
+      { title: "@tyza66 — Open-Source Contributor", sub: "Contributed --encoding tokenizer flag (PR #17)", view: "systems" },
+      { title: "Teaching & Student Mentorship (100+ students, 20 student papers)", sub: "Applied NLP for Social Good seminar & ML coursework", view: "teaching" },
+      { title: "Honors & Fellowships (VinIF, EMNLP Outstanding Reviewer, PACLIC)", sub: "Valedictorian M.Sc. GPA 9.3/10.0 (Ranked 1st/40)", view: "honors" }
+    ];
+
+    function renderCommandList(q) {
+      const query = q.trim().toLowerCase();
+      const list = document.getElementById("cmdList");
+      const matches = CMD_ITEMS.filter(i =>
+        !query || i.title.toLowerCase().includes(query) || i.sub.toLowerCase().includes(query)
+      );
+      list.innerHTML = matches.map(m => `
+        <button onclick="switchView('${m.view}'); closeCommandModal();" class="w-full text-left px-4 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 transition block">
+          <div class="font-semibold text-[13px] text-[#3B97B6]">${m.title}</div>
+          <div class="muted-copy text-[11.5px] mt-0.5">${m.sub}</div>
+        </button>
+      `).join("");
+    }
+
+    function openCommandModal() {
+      document.getElementById("cmdModal").classList.remove("hidden");
+      const inp = document.getElementById("cmdInput");
+      inp.value = "";
+      renderCommandList("");
+      setTimeout(() => inp.focus(), 30);
+    }
+
+    function closeCommandModal() {
+      document.getElementById("cmdModal").classList.add("hidden");
+    }
+
+    // Initialize Budget Simulator & URL Hash Deep-Linking on Load
+    window.addEventListener("DOMContentLoaded", () => {
+      setBudgetSim("8k");
+      const rawHash = window.location.hash.replace("#", "").toLowerCase();
+      if (rawHash === "about") {
+        switchView("overview", false);
+      } else if (VIEWS.includes(rawHash)) {
+        switchView(rawHash, false);
+      }
+    });
+
+    // Keyboard Shortcuts: ⌘K for Search, 1-6 for Instant View Switching
+    window.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openCommandModal();
+        return;
+      }
+      if (e.key === "Escape") {
+        closeCommandModal();
+        return;
+      }
+      const tag = (document.activeElement && document.activeElement.tagName) || "";
+      if (tag === "INPUT" || tag === "TEXTAREA" || e.metaKey || e.ctrlKey || e.altKey) return;
+      const num = parseInt(e.key, 10);
+      if (num >= 1 && num <= VIEWS.length) {
+        switchView(VIEWS[num - 1]);
+      }
+    });
+  </script>
+</body>
+</html>
