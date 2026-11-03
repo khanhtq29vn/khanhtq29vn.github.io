@@ -470,7 +470,7 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
     const mailtoLink = document.getElementById("emailMailtoLink");
     if (emailBtn) {
       const addr = `${atob(emailBtn.dataset.u || "a2hhbmh0cQ==")}@${atob(
-        emailBtn.dataset.d || "bnVzLmVkdS52bg=="
+        emailBtn.dataset.d || "dS5udXMuZWR1"
       )}`;
       emailBtn.addEventListener("click", () => {
         window.copyText(addr, `Copied email: ${addr}`);
