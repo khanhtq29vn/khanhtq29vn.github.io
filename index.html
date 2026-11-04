@@ -1337,7 +1337,7 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
                 <div class="font-mono text-xs muted-copy">November 2026 · Systems, Compilers &amp; Rust · 8 min read</div>
                 <h3 class="text-[17.5px] font-semibold">
                   <button onclick="openBlogPost('post-1')" class="acad-link text-left">
-                    Why Codebase Context Packing is a Multiple-Choice Knapsack Problem — and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
+                    Why Codebase Context Packing is a Multiple-Choice Knapsack Problem - and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
                   </button>
                 </h3>
                 <p class="text-[14.5px]">
@@ -1371,13 +1371,13 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
             <div class="space-y-2 border-b hairline pb-4">
               <div class="font-mono text-xs muted-copy">November 2026 · Co-authored with <a href="https://github.com/pinanek" target="_blank" class="acad-link">Ngo Duc Hoang Son (@pinanek)</a></div>
               <h2 class="text-[24px] font-bold tracking-tight text-black dark:text-white leading-snug">
-                Why Codebase Context Packing is a Multiple-Choice Knapsack Problem — and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
+                Why Codebase Context Packing is a Multiple-Choice Knapsack Problem - and How Rust + Rayon Solved 30,018 Files in 7.2 Seconds
               </h2>
             </div>
 
             <div class="space-y-4 text-[15px] leading-[1.75] font-serif">
               <p>
-                When feeding a repository into an LLM for architectural review or debugging, existing packers (<code class="font-mono text-xs">repomix</code>, <code class="font-mono text-xs">gitingest</code>) concatenate every file verbatim in alphabetical order. On a 119,813-token repository, truncating at an 8,000-token budget discards 88% of the codebase—blinding the model to core modules that happen to start with letters later in the alphabet.
+                When feeding a repository into an LLM for architectural review or debugging, existing packers (<code class="font-mono text-xs">repomix</code>, <code class="font-mono text-xs">gitingest</code>) concatenate every file verbatim in alphabetical order. On a 119,813-token repository, truncating at an 8,000-token budget discards 88% of the codebase-blinding the model to core modules that happen to start with letters later in the alphabet.
               </p>
               <h3 class="font-sans text-[17px] font-bold text-black dark:text-white pt-2">1. Mathematical Formulation &amp; "God Object" Immunity</h3>
               <p>
@@ -1387,7 +1387,7 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
                 ρ(i, l → l') = [ PageRank(i; q) · (u(l') - u(l)) ] / [ C_eff(i, l') - C_eff(i, l) ]
               </div>
               <p>
-                Because &Delta;Tokens sits in the denominator, an oversized 2,523-token hub file like <code class="font-mono text-xs">structural.py</code> (6.9% PageRank) has a low marginal density for the jump from <code class="font-mono text-xs">SKEL</code> (389 tokens) to <code class="font-mono text-xs">FULL</code> (2,523 tokens). The solver automatically keeps <code class="font-mono text-xs">structural.py</code> at <code class="font-mono text-xs">SKEL</code>—saving 2,134 tokens so surrounding modules can retain full or skeletal fidelity.
+                Because &Delta;Tokens sits in the denominator, an oversized 2,523-token hub file like <code class="font-mono text-xs">structural.py</code> (6.9% PageRank) has a low marginal density for the jump from <code class="font-mono text-xs">SKEL</code> (389 tokens) to <code class="font-mono text-xs">FULL</code> (2,523 tokens). The solver automatically keeps <code class="font-mono text-xs">structural.py</code> at <code class="font-mono text-xs">SKEL</code>-saving 2,134 tokens so surrounding modules can retain full or skeletal fidelity.
               </p>
               <h3 class="font-sans text-[17px] font-bold text-black dark:text-white pt-2">2. Migrating the Engine to Rust + Rayon + PyO3 (PR #34)</h3>
               <p>
