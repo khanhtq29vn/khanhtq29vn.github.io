@@ -28,6 +28,14 @@
       highlight:
         "First external community contributor; implemented the --encoding / -enc tokenizer CLI flag (#17) for o200k_base & cl100k_base.",
     },
+    hoangan: {
+      name: "Vo Hoang-An (Hoang-An Vo)",
+      handle: "VNUHCM-UIT · Co-First Author (ACM MM'26)",
+      avatar: "https://github.com/anpc849.png?size=96",
+      role: "Research Collaborator & Mentee · Causal Multimodal Reasoning",
+      highlight:
+        "Co-designed and implemented TF-BEAR (Training-Free Bayesian Evidence Aggregation) for causal log-odds attribution across MM-RegCheck (ACM MM'26) and VietCheckMed (CIKM'26).",
+    },
     binh: {
       name: "Assoc. Prof. Binh Thanh Nguyen",
       handle: "Head of Computer Science Dept., VNUHCM-US",
@@ -290,10 +298,19 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
     if (avatarEl) {
       if (data.avatar) {
         avatarEl.src = data.avatar;
-        avatarEl.style.display = "block";
       } else {
-        avatarEl.style.display = "none";
+        const initials = (
+          data.initials ||
+          data.name
+            .split(" ")
+            .map((w) => w[0])
+            .join("")
+            .slice(0, 2)
+        ).toUpperCase();
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="#EBF6F9"/><text x="48" y="55" text-anchor="middle" fill="#2B7A96" font-family="Inter, sans-serif" font-size="30" font-weight="700">${initials}</text></svg>`;
+        avatarEl.src = "data:image/svg+xml;utf8," + encodeURIComponent(svg);
       }
+      avatarEl.style.display = "block";
     }
     document.getElementById("collabName").textContent = data.name;
     document.getElementById("collabHandle").textContent = data.handle;
