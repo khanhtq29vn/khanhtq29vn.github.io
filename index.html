@@ -388,8 +388,9 @@
 
             <ol class="list-decimal list-outside ml-5 space-y-2.5">
               <li class="pl-1">
-                <strong>Trustworthy &amp; Explainable AI (XAI) for High-Stakes Reasoning:</strong> designing retrieval-augmented compliance verification, multi-domain fact-checking benchmarks, and fine-grained span-level explainability
-                [<a href="#home-pubs" onmouseenter="showCite(event, 'vietcheckmed')" onmouseleave="hideCite()" class="acad-link">VietCheckMed (AAAI'26)</a>,
+                <strong>Trustworthy, Multimodal &amp; Causal AI for Regulatory Oversight:</strong> architecting training-free Bayesian evidence adjudication (<code class="font-mono text-[13px]">TF-BEAR</code>), cross-modal evasion benchmarks (<code class="font-mono text-[13px]">MedReg-MM</code>), and scalable Knowledge-as-a-Service verification engines
+                [<a href="#home-pubs" onmouseenter="showCite(event, 'mmregcheck')" onmouseleave="hideCite()" class="acad-link">MM-RegCheck (ACM MM'26)</a>,
+                <a href="#home-pubs" onmouseenter="showCite(event, 'vietcheckmed_cikm')" onmouseleave="hideCite()" class="acad-link">VietCheckMed Engine (CIKM'26)</a>,
                 <a href="#home-pubs" onmouseenter="showCite(event, 'vifactcheck')" onmouseleave="hideCite()" class="acad-link">ViFactCheck (AAAI'25 Oral)</a>,
                 <a href="#home-pubs" onmouseenter="showCite(event, 'vihos')" onmouseleave="hideCite()" class="acad-link">ViHOS (EACL'23 Oral)</a>].
               </li>
@@ -439,6 +440,10 @@
               <div>
                 <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[10/2026] -</span>
                 Released <a href="https://pypi.org/project/contextcraft-ai/" target="_blank" class="acad-link">contextcraft-ai v0.3.0</a> on PyPI with 35 Tree-sitter language grammars (<a href="https://github.com/pinanek" target="_blank" onmouseenter="showCollab(event, 'pinanek')" onmouseleave="hideCollab()" class="collab-link">@pinanek</a>) and multi-encoding tokenizer support contributed by <a href="https://github.com/tyza66" target="_blank" onmouseenter="showCollab(event, 'tyza66')" onmouseleave="hideCollab()" class="collab-link">@tyza66</a>.
+              </div>
+              <div>
+                <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[08/2026] -</span>
+                Two papers extending our regulatory compliance research program—<a href="#home-pubs" onmouseenter="showCite(event, 'mmregcheck')" onmouseleave="hideCite()" class="acad-link">MM-RegCheck</a> (causal multimodal evasion detection, in collaboration with <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" class="collab-link">Assoc. Prof. Binh Nguyen</a> &amp; <a href="https://liaolizi.github.io/" target="_blank" onmouseenter="showCollab(event, 'lizi')" onmouseleave="hideCollab()" class="collab-link">Prof. Lizi Liao</a> at SMU) and <a href="#home-pubs" onmouseenter="showCite(event, 'vietcheckmed_cikm')" onmouseleave="hideCite()" class="acad-link">VietCheckMed Engine</a> (<a href="https://vietcheckmed.org/" target="_blank" class="acad-link">vietcheckmed.org</a>)—were accepted to <strong>ACM Multimedia (MM 2026)</strong> and <strong>ACM CIKM 2026</strong>!
               </div>
               <div>
                 <span class="font-mono text-[13.5px] text-slate-600 dark:text-slate-400">[06/2026] -</span>
@@ -532,7 +537,68 @@
                   </div>
                 </li>
 
-                <!-- 2. ViFactCheck -->
+                <!-- 2. MM-RegCheck (ACM MM 2026) -->
+                <li class="pl-1">
+                  T. Nguyen*, H.-A. Vo*, T. P. Le, K. A. Ta, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, D. T. M. Ngo, B.-T. T. Dang, L. H. U. Thu, <a href="https://liaolizi.github.io/" target="_blank" onmouseenter="showCollab(event, 'lizi')" onmouseleave="hideCollab()" class="collab-link">L. Liao</a>, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">B. T. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-mm26')" class="acad-link italic">MM-RegCheck: Training-Free Causal-Aware Multimodal Reasoning for Regulatory Evasion Detection.</a>
+                  ACM International Conference on Multimedia (ACM MM), 2026.
+                  <span class="impact-highlight">Accepted (In Press, CORE A*) · Supported by NRF Singapore (AISG-NMLP-2024-002).</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-mm26')" class="acad-link">Abstract &amp; Role</button>]
+                    [<button onclick="toggleDrawer('home-bib-mm26')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-mm26" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed space-y-1.5">
+                    <div>
+                      Introduces <strong>MedReg-MM</strong> (5,706 multimodal advertisements paired with 9,978 licensed facilities, Cohen's κ = 0.92) and <strong>TF-BEAR</strong> (Training-Free Bayesian Evidence Aggregation), which computes evidence-conditioned log-odds attribution (Δ) to enforce strict visual liability under cross-modal evasion (0.8985 Macro-F1 with a 9B backbone).
+                    </div>
+                    <div class="text-[12.5px] muted-copy border-t hairline pt-1.5">
+                      <strong class="text-black dark:text-white">CRediT Role:</strong> Co-led framework &amp; <code class="font-mono">TF-BEAR</code> algorithmic formulation, led full experimental design, ablation &amp; <code class="font-mono">FIDES</code> analysis, and co-led the rebuttal process while mentoring undergraduate researchers (H.-A. Vo, K. A. Ta, Bao-Thi T. D.).
+                    </div>
+                  </div>
+                  <div id="home-bib-mm26" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-mm26-raw').textContent, 'Copied BibTeX for MM-RegCheck (ACM MM 2026)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-mm26-raw" class="overflow-x-auto">@inproceedings{nguyen2026mmregcheck,
+  author    = {Nguyen, Tam and Vo, Hoang-An and Le, Truong Phu and Ta, Khoa Anh and Tran, Khanh and Ngo, Duyen Thi My and Dang, Bao-Thi Trong and Thu, Le Hoang Uyen and Liao, Lizi and Nguyen, Binh},
+  title     = {MM-RegCheck: Training-Free Causal-Aware Multimodal Reasoning for Regulatory Evasion Detection},
+  booktitle = {Proceedings of the 34th ACM International Conference on Multimedia (MM '26)},
+  year      = {2026},
+  note      = {Accepted / In Press}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 3. VietCheckMed Engine (ACM CIKM 2026) -->
+                <li class="pl-1">
+                  T. Nguyen*, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran*</u>, A. Vo, K. Ta, T. Le, T. Le, T. Dang, D. Pham, D. Ngo, H. Nguyen, <a href="https://liaolizi.github.io/" target="_blank" onmouseenter="showCollab(event, 'lizi')" onmouseleave="hideCollab()" class="collab-link">L. Liao</a>, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">B. T. Nguyen</a>.
+                  <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-cikm26')" class="acad-link italic">VietCheckMed: A Scalable Retrieval-Augmented Engine for Zero-Day Regulatory Oversight.</a>
+                  ACM International Conference on Information and Knowledge Management (CIKM), 2026.
+                  <span class="impact-highlight">Accepted (In Press, CORE A) · Live RegTech Platform ($0.0004/sample inference).</span>
+                  <span class="font-mono text-[12px] ml-1">
+                    [<button onclick="toggleDrawer('home-abs-cikm26')" class="acad-link">Abstract &amp; Role</button>]
+                    [<a href="https://vietcheckmed.org/" target="_blank" rel="noopener noreferrer" class="acad-link">Live System</a>]
+                    [<button onclick="toggleDrawer('home-bib-cikm26')" class="acad-link">BibTeX</button>]
+                  </span>
+                  <div id="home-abs-cikm26" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px] leading-relaxed space-y-1.5">
+                    <div>
+                      Operationalizes training-free causal multimodal reasoning into a Knowledge-as-a-Service (KaaS) regulatory platform indexing 9,978 facilities with event-driven vector cache invalidation, hybrid BM25 + dense retrieval, and context caching—achieving 0.898 Macro-F1 at ~$0.0004 per sample.
+                    </div>
+                    <div class="text-[12.5px] muted-copy border-t hairline pt-1.5">
+                      <strong class="text-black dark:text-white">CRediT Role:</strong> Co-led KaaS system architecture &amp; hybrid retrieval formulation, led full Pareto latency-cost-accuracy experimental evaluation, and co-led the rebuttal with mentored UIT & HCMUS undergraduate researchers.
+                    </div>
+                  </div>
+                  <div id="home-bib-cikm26" class="hidden mt-2 p-3 rounded subtle-box border font-mono text-[12px] relative">
+                    <button onclick="copyText(document.getElementById('bib-cikm26-raw').textContent, 'Copied BibTeX for VietCheckMed (CIKM 2026)')" class="absolute top-2 right-2 px-2 py-0.5 rounded border hairline text-[11px] hover:border-[#3B97B6]">Copy</button>
+                    <pre id="bib-cikm26-raw" class="overflow-x-auto">@inproceedings{nguyen2026vietcheckmed_cikm,
+  author    = {Nguyen, Tam and Tran, Khanh Quoc and Vo, An and Ta, Khoa and Le, Truong and Le, Thu and Dang, Thi and Pham, Dat and Ngo, Duyen and Nguyen, Han and Liao, Lizi and Nguyen, Binh},
+  title     = {VietCheckMed: A Scalable Retrieval-Augmented Engine for Zero-Day Regulatory Oversight},
+  booktitle = {Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26)},
+  year      = {2026},
+  note      = {Accepted / In Press}
+}</pre>
+                  </div>
+                </li>
+
+                <!-- 4. ViFactCheck -->
                 <li class="pl-1">
                   T. T. Hoa, T. Q. Duy, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
                   <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-2')" class="acad-link italic">ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese.</a>
@@ -557,7 +623,7 @@
                   </div>
                 </li>
 
-                <!-- 3. Open-ViTabQA -->
+                <!-- 5. Open-ViTabQA -->
                 <li class="pl-1">
                   D. H. Dao, N. T. K. Huynh, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
                   <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-3')" class="acad-link italic">Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain Wikipedia table.</a>
@@ -581,7 +647,7 @@
                   </div>
                 </li>
 
-                <!-- 4. ViHOS -->
+                <!-- 6. ViHOS -->
                 <li class="pl-1">
                   P. G. Hoang, C. D. Luu, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>, N. L.-T. Nguyen.
                   <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-4')" class="acad-link italic">ViHOS: Hate Speech Spans Detection for Vietnamese.</a>
@@ -605,7 +671,7 @@
                   </div>
                 </li>
 
-                <!-- 5. PhoBERT-CNN -->
+                <!-- 7. PhoBERT-CNN -->
                 <li class="pl-1">
                   <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, A. T. Nguyen, P. G. Hoang, C. D. Luu, T. H. Do, <a href="https://scholar.google.com/citations?user=2352c2wAAAAJ" target="_blank" onmouseenter="showCollab(event, 'kiet')" onmouseleave="hideCollab()" class="collab-link">K. V. Nguyen</a>.
                   <a href="javascript:void(0)" onclick="toggleDrawer('home-abs-5')" class="acad-link italic">Vietnamese Hate and Offensive Detection using PhoBERT-CNN and Social Media Streaming Data.</a>
@@ -638,6 +704,11 @@
                 Papers and research projects done by undergraduate students I have mentored, supervised, or collaborated with closely at VNUHCM-UIT &amp; AISIA Lab (100+ students mentored, leading to 20 student-led publications at AAAI, PACLIC, and VLSP):
               </p>
               <ol class="list-decimal list-outside ml-5 space-y-3.5 text-[14.8px] body-copy">
+                <li class="pl-1">
+                  T. Nguyen, H.-A. Vo (UIT Mentee), T. P. Le, K. A. Ta (UIT Mentee), <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>, et al.
+                  <span class="acad-link italic">MM-RegCheck (ACM MM 2026) &amp; VietCheckMed Engine (ACM CIKM 2026).</span>
+                  <span class="impact-highlight">Co-led algorithmic design, full experimental evaluation &amp; rebuttals while mentoring UIT undergraduate researchers into top-tier ACM venues.</span>
+                </li>
                 <li class="pl-1">
                   N. T. Tam, T. T. Hoa, <u class="font-medium text-black dark:text-white">Khanh Quoc Tran</u>*, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">B. T. Nguyen</a>.
                   <span class="acad-link italic">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements.</span>
@@ -798,26 +869,72 @@
           <!-- 2026 -->
           <div class="pub-year-group space-y-4">
             <h3 class="text-[16px] font-semibold text-slate-800 dark:text-slate-200 border-b hairline pb-1">2026</h3>
-            <div class="space-y-4 pl-2">
+            <div class="space-y-5 pl-2">
+
+              <!-- 7. MM-RegCheck (ACM MM 2026) -->
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="mm">
+                <div>
+                  <span class="muted-copy mr-1">7.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-7')" class="acad-link font-medium">MM-RegCheck: Training-Free Causal-Aware Multimodal Reasoning for Regulatory Evasion Detection</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  Tam Nguyen*, Hoang-An Vo*, Truong Phu Le, Khoa Anh Ta, <u class="text-black dark:text-white font-medium">Khanh Tran</u>, Duyen Thi My Ngo, Bao-Thi Trong Dang, Le Hoang Uyen Thu, <a href="https://liaolizi.github.io/" target="_blank" onmouseenter="showCollab(event, 'lizi')" onmouseleave="hideCollab()" class="collab-link">Lizi Liao</a>, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Binh Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Proceedings of the 34th ACM International Conference on Multimedia (ACM MM 2026)</em>, Rio de Janeiro, Brazil · <span class="impact-highlight">Accepted (In Press · CORE A* · Co-led Framework, Experiments &amp; Rebuttal)</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-7')" class="acad-link">Abstract &amp; Role</button>]
+                    [<button onclick="copyText('Nguyen, T., Vo, H.-A., Le, T. P., Ta, K. A., Tran, K., Ngo, D. T. M., Dang, B.-T. T., Thu, L. H. U., Liao, L., & Nguyen, B. (2026). MM-RegCheck: Training-Free Causal-Aware Multimodal Reasoning for Regulatory Evasion Detection. In Proceedings of the 34th ACM International Conference on Multimedia (MM 26).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-7" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Proposes TF-BEAR (Training-Free Bayesian Evidence Aggregation) and the MedReg-MM benchmark to counter cross-modal regulatory evasion. <strong>Contribution:</strong> Co-led framework &amp; algorithmic design, led full experimental design and ablation/FIDES analysis, and co-led the rebuttal process.
+                </div>
+              </div>
+
+              <!-- 6. VietCheckMed Engine (ACM CIKM 2026) -->
+              <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="first cikm">
+                <div>
+                  <span class="muted-copy mr-1">6.</span>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-6')" class="acad-link font-medium">VietCheckMed: A Scalable Retrieval-Augmented Engine for Zero-Day Regulatory Oversight</a>
+                </div>
+                <div class="italic text-[14px] body-copy">
+                  Tam Nguyen*, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>, An Vo, Khoa Ta, Truong Le, Thu Le, Thi Dang, Dat Pham, Duyen Ngo, Han Nguyen, <a href="https://liaolizi.github.io/" target="_blank" onmouseenter="showCollab(event, 'lizi')" onmouseleave="hideCollab()" class="collab-link">Lizi Liao</a>, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Binh Nguyen</a>
+                </div>
+                <div class="text-[14px] body-copy">
+                  In <em>Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM 2026)</em>, Rome, Italy · <span class="impact-highlight">Accepted (In Press · CORE A · Co-led KaaS Architecture, Experiments &amp; Rebuttal)</span>
+                  <span class="font-mono text-xs ml-2">
+                    [<button onclick="toggleDrawer('c-abs-6')" class="acad-link">Abstract &amp; Role</button>]
+                    [<a href="https://vietcheckmed.org/" target="_blank" rel="noopener noreferrer" class="acad-link">vietcheckmed.org</a>]
+                    [<button onclick="copyText('Nguyen, T., Tran, K. Q., Vo, A., Ta, K., Le, T., Le, T., Dang, T., Pham, D., Ngo, D., Nguyen, H., Liao, L., & Nguyen, B. (2026). VietCheckMed: A Scalable Retrieval-Augmented Engine for Zero-Day Regulatory Oversight. In Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM 26).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                  </span>
+                </div>
+                <div id="c-abs-6" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
+                  Real-time Knowledge-as-a-Service (KaaS) regulatory compliance platform achieving 0.898 Macro-F1 at $0.0004/sample via hybrid RAG and context caching. <strong>Contribution:</strong> Co-led system &amp; retrieval architecture, led Pareto cost-latency-accuracy evaluation, and co-led the rebuttal.
+                </div>
+              </div>
+
+              <!-- 5. VietCheckMed (AAAI 2026) -->
               <div class="chrono-pub-item text-[14.8px] leading-relaxed" data-tags="first aaai">
                 <div>
                   <span class="muted-copy mr-1">5.</span>
-                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-5')" class="acad-link font-medium">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements</a>
+                  <a href="javascript:void(0)" onclick="toggleDrawer('c-abs-5')" class="acad-link font-medium">VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements on Vietnamese Social Media</a>
                 </div>
                 <div class="italic text-[14px] body-copy">
-                  N. T. Tam*, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>*, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Binh Thanh Nguyen</a>
+                  Nguyen Thanh Tam*, <u class="text-black dark:text-white font-medium">Khanh Quoc Tran</u>*, Dat Thanh Pham, Truong Phu Le, Nguyen Hoang Gia Han, <a href="https://scholar.google.com/citations?user=M6f2X2AAAAAJ" target="_blank" onmouseenter="showCollab(event, 'binh')" onmouseleave="hideCollab()" class="collab-link">Binh T. Nguyen</a>
                 </div>
                 <div class="text-[14px] body-copy">
-                  In <em>Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)</em> · <span class="impact-highlight">Accepted (Co-first author, Pending Patent)</span>
+                  In <em>Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)</em>, Vol. 40, pp. 1069–1077 · <span class="impact-highlight">Accepted (Co-first author, Pending Patent)</span>
                   <span class="font-mono text-xs ml-2">
                     [<button onclick="toggleDrawer('c-abs-5')" class="acad-link">Abstract</button>]
-                    [<button onclick="copyText('Tam, N. T., Hoa, T. T., Tran, K. Q., & Nguyen, B. T. (2026). VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements. In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI).', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
+                    [<button onclick="copyText('Tam, N. T., Tran, K. Q., Pham, D. T., Le, T. P., Han, N. H. G., & Nguyen, B. T. (2026). VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements on Vietnamese Social Media. In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 40, 1069-1077.', 'Copied plain-text citation')" class="acad-link">Copy Cite</button>]
                   </span>
                 </div>
                 <div id="c-abs-5" class="hidden mt-2 p-3 rounded subtle-box border text-[13.5px]">
                   Co-led the RAG framework and FIDES reasoning evaluation metric for medical advertisement compliance checking with the Ho Chi Minh City Department of Health.
                 </div>
               </div>
+
             </div>
           </div>
 

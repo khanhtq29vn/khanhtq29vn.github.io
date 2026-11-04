@@ -36,6 +36,14 @@
       highlight:
         "Research supervisor & co-author on VietCheckMed (AAAI 2026) and medical regulatory AI systems.",
     },
+    lizi: {
+      name: "Prof. Lizi Liao",
+      handle: "Singapore Management University (SMU)",
+      avatar: "",
+      role: "Senior Research Collaborator · Conversational & Multimodal AI",
+      highlight:
+        "Co-author on MM-RegCheck (ACM MM 2026) and VietCheckMed Engine (ACM CIKM 2026), supported by NRF Singapore (AISG-NMLP-2024-002).",
+    },
     kiet: {
       name: "Dr. Kiet Van Nguyen",
       handle: "Dean, Faculty of ISE, VNUHCM-UIT",
@@ -52,6 +60,24 @@
       title: "VietCheckMed: Explainable Regulatory Compliance Checking for Medical Advertisements",
       authors: "N. T. Tam*, T. T. Hoa*, Khanh Quoc Tran*, B. T. Nguyen",
       impact: "Deployed at HCMC Department of Health · Pending Patent",
+    },
+    mmregcheck: {
+      venue: "ACM Multimedia (MM 2026) · Accepted (In Press, CORE A*)",
+      title:
+        "MM-RegCheck: Training-Free Causal-Aware Multimodal Reasoning for Regulatory Evasion Detection",
+      authors:
+        "T. Nguyen*, H.-A. Vo*, T. P. Le, K. A. Ta, Khanh Tran, et al., L. Liao, B. Nguyen",
+      impact:
+        "Co-led TF-BEAR framework, full experimental design & rebuttal · Supported by NRF Singapore",
+    },
+    vietcheckmed_cikm: {
+      venue: "ACM CIKM 2026 · Accepted (In Press, CORE A)",
+      title:
+        "VietCheckMed: A Scalable Retrieval-Augmented Engine for Zero-Day Regulatory Oversight",
+      authors:
+        "T. Nguyen*, Khanh Quoc Tran, A. Vo, K. Ta, T. Le, et al., L. Liao, B. Nguyen",
+      impact:
+        "Co-led KaaS architecture & Pareto evaluation ($0.0004/sample) · Live at vietcheckmed.org",
     },
     vifactcheck: {
       venue: "AAAI 2025 · Oral Presentation",
@@ -165,6 +191,8 @@ class StructuralSkeletonBuilder(SkeletonBuilder):
 
   const CMD_ITEMS = [
     { title: "VietCheckMed (AAAI 2026 · Co-first author)", sub: "Medical regulatory compliance checking · HCMC Dept. of Health", view: "publications" },
+    { title: "MM-RegCheck (ACM Multimedia 2026 · CORE A*)", sub: "Training-free Bayesian causal multimodal reasoning (TF-BEAR) & MedReg-MM benchmark", view: "publications"},
+    { title: "VietCheckMed Engine (ACM CIKM 2026 · CORE A)", sub: "Scalable KaaS regulatory oversight platform ($0.0004/sample) · vietcheckmed.org", view: "publications"},
     { title: "ViFactCheck (AAAI 2025 · Oral Presentation)", sub: "Multi-domain Vietnamese news fact-checking benchmark", view: "publications" },
     { title: "Open-ViTabQA (Knowledge-Based Systems 2025 · SCIE Q1 IF: 8.8)", sub: "Complex table question answering · 5,000+ HF downloads", view: "publications" },
     { title: "ViHOS (EACL 2023 · Oral Presentation)", sub: "Explainable hate speech spans detection for Vietnamese", view: "publications" },
